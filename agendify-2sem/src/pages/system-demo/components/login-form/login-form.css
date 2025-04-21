@@ -1,0 +1,10 @@
+
+.btn-gradient {
+    background: linear-gradient(90deg, #6d5dfc, #fc67fa);
+    border: none;
+    color: #fff;
+  }
+  .btn-gradient:hover {
+    opacity: 0.9;
+  }
+  

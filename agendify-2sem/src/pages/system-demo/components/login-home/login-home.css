@@ -1,0 +1,36 @@
+
+.login-home {
+    height: 100vh;
+    padding: 1rem;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .agendify-purple {
+    color: #a259ff;
+  }
+  
+  /* botão preenchido */
+  .btn-gradient {
+    background: linear-gradient(90deg, #6d5dfc, #fc67fa);
+    border: none;
+    color: #fff;
+    width: 240px;
+  }
+  .btn-gradient:hover {
+    opacity: 0.9;
+  }
+  
+  /* botão outline com border-gradient */
+  .btn-outline-gradient {
+    background: transparent;
+    border: 2px solid;
+    border-image: linear-gradient(90deg, #6d5dfc, #fc67fa) 1;
+    color: #6d5dfc;
+    width: 240px;
+  }
+  .btn-outline-gradient:hover {
+    background: linear-gradient(90deg, #6d5dfc, #fc67fa);
+    color: #fff;
+  }
+  
