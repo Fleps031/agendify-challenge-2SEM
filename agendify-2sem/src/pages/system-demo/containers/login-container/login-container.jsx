@@ -26,12 +26,21 @@ export default function LoginContainer() {
     navigate('/sistema/fila')
   }
 
+  function onBack() {
+    localStorage.removeItem('tipoUser')
+    setTipoUser(null)
+  }
+
   return (
     <div className="login-container">
       {!tipoUser ? (
         <LoginHome mudarTipoUser={mudarTipoUser} />
-      ) : (
-        <LoginForm tipoUser={tipoUser} onLoginSuccess={onLoginSuccess} />
+      ) : (       
+        <LoginForm
+         tipoUser={tipoUser}
+         onLoginSuccess={onLoginSuccess}
+         onBack={onBack}
+       />
       )}
     </div>
   )

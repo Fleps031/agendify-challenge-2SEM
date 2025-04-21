@@ -7,4 +7,22 @@
   .btn-gradient:hover {
     opacity: 0.9;
   }
+
+  .login-form-wrapper {
+    position: relative;
+    height: 100vh;
+  }
+  
+  .back-link {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 0.9rem;
+    color: #646cff;
+    text-decoration: none;
+  }
+  .back-link:hover {
+    text-decoration: underline;
+  }
+  
   
