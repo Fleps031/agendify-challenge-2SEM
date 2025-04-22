@@ -1,8 +1,47 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+}
+
+.scale-hover:hover {
+  transform: scale(1.01);
+}
+
+.bg-roxo-custom {
+  background-color: #6E23B6;
+}
+
+.txt-roxo-custom {
+  color: #6E23B6;
+}
+
+.cor-da-borda {
+  border-color: #6E23B6;
+}
+
+.line-custom {
+  height: 5px;
+  width: 50%;
+}
+
+.line-custom-ver2 {
+  height: 2px;
+  width: 20%;
+}
+
+.w-150 {
+  width: 150px;
+}
+
+.mt-100 {
+  margin-top: 100px;
+}
+
+.mt-150 {
+  margin-top: 150px;
+}
+
+.ponto-grande {
+  font-size: 50px;
 }
 
 .logo {
