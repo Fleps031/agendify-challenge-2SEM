@@ -1,0 +1,17 @@
+.trash-can:hover{
+    color: crimson;
+    
+}
+
+.status-booked{
+    background-color: rgb(183, 0, 255)
+}
+.status-awaiting{
+    background-color: rgb(250, 124, 239)
+}
+.status-notified{
+    background-color: rgb(22, 63, 226)
+}
+.status-processing{
+    background-color: rgb(76, 71, 77)
+}
