@@ -9,8 +9,6 @@ import QueueContainer from './pages/system-demo/containers/queue-container/queue
 function App() {
   return (
     <>
-      <h1 className="text-center my-4">Agendify - APP</h1>
-
       <Routes>
         <Route path="/" element={<LandingPage />} />
 
