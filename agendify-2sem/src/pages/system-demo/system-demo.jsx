@@ -1,5 +1,5 @@
 
-import { Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router'
 import './system-demo.css'
 
 export default function SystemDemo() {

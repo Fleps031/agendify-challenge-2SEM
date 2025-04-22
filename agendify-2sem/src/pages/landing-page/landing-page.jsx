@@ -11,8 +11,6 @@ import './landing-page.css'
 export default function LandingPage(){
     return(
         <>
-            <h1>Landing Page Works!</h1>
-
             <HeaderComponent></HeaderComponent>
             
             <main>

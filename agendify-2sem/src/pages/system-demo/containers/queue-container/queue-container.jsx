@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router'
 import QueueDashboard from '../../components/queue-dashboard/queue-dashboard'
 import QueuePatient from '../../components/queue-patient/queue-patient'
 import './queue-container.css'
