@@ -1,0 +1,29 @@
+.text-gradient {
+    background: linear-gradient(90deg, #A25DDC, #F9578A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .border-gradient {
+    border: 6px solid transparent;
+    border-image: linear-gradient(90deg, #A25DDC, #F9578A) 1;
+}
+
+  
+  .text-purple {
+    color: #A25DDC;
+  }
+  
+  .border-purple {
+    border: 1px solid #E9B4F8;
+  }
+  
+  .custom-shadow {
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .scroll-area {
+    max-height: 380px;
+    overflow-y: auto;
+  }
+  

@@ -1,6 +1,5 @@
-
+// src/pages/system-demo/components/login-form/login-form.jsx
 import { useState } from 'react'
-import { Form, Button, Card } from 'react-bootstrap'
 import './login-form.css'
 import imgLogin from '../../../../images/home_1.png'
 
@@ -20,19 +19,17 @@ export default function LoginForm({ tipoUser, onLoginSuccess, onBack }) {
 
   function handleSubmit(e) {
     e.preventDefault()
-    // Validação: ambos os campos devem ter algo
     if (!ident.trim() || !senha.trim()) {
       setError('Por favor, preencha ambos os campos para entrar.')
       return
     }
-    // Limpa qualquer erro existente e prossegue
     setError('')
     onLoginSuccess()
   }
 
   return (
     <div className="login-form-wrapper d-flex flex-column flex-md-row vh-100">
-      {/* coluna do form */}
+      {/* Coluna do formulário */}
       <div className="flex-fill bg-white p-4 position-relative">
         <a
           href="#"
@@ -44,17 +41,17 @@ export default function LoginForm({ tipoUser, onLoginSuccess, onBack }) {
         >
           ← Voltar
         </a>
-        <div className="d-flex align-items-center justify-content-center h-100">
-          <Card className="p-4" style={{ maxWidth: '380px', width: '100%' }}>
-            <Card.Title className="mb-3 text-start">
-              {labelBemVindo}
-            </Card.Title>
-            <Card.Text className="mb-4 text-start">{instrucoes}</Card.Text>
 
-            <Form onSubmit={handleSubmit}>
-              <Form.Group className="mb-3" controlId="formIdent">
-                <Form.Control
+        <div className="d-flex align-items-center justify-content-center h-100">
+          <div className="card p-4" style={{ maxWidth: '380px', width: '100%' }}>
+            <h2 className="card-title mb-3 text-start">{labelBemVindo}</h2>
+            <p className="card-text mb-4 text-start">{instrucoes}</p>
+
+            <form onSubmit={handleSubmit}>
+              <div className="mb-3">
+                <input
                   type="text"
+                  className="form-control"
                   placeholder={placeholderIdent}
                   value={ident}
                   onChange={e => {
@@ -62,11 +59,12 @@ export default function LoginForm({ tipoUser, onLoginSuccess, onBack }) {
                     if (error) setError('')
                   }}
                 />
-              </Form.Group>
+              </div>
 
-              <Form.Group className="mb-3" controlId="formSenha">
-                <Form.Control
+              <div className="mb-3">
+                <input
                   type="password"
+                  className="form-control"
                   placeholder="Senha"
                   value={senha}
                   onChange={e => {
@@ -74,7 +72,7 @@ export default function LoginForm({ tipoUser, onLoginSuccess, onBack }) {
                     if (error) setError('')
                   }}
                 />
-              </Form.Group>
+              </div>
 
               {error && (
                 <div className="text-danger mb-3">
@@ -82,15 +80,18 @@ export default function LoginForm({ tipoUser, onLoginSuccess, onBack }) {
                 </div>
               )}
 
-              <Button className="btn-gradient w-100" type="submit">
+              <button
+                type="submit"
+                className="btn btn-gradient w-100"
+              >
                 Entrar
-              </Button>
-            </Form>
-          </Card>
+              </button>
+            </form>
+          </div>
         </div>
       </div>
 
-      {/* coluna da imagem */}
+      {/* Coluna da imagem */}
       <div className="flex-fill">
         <img
           src={imgLogin}
