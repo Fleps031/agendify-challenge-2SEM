@@ -1,5 +1,5 @@
 
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router'
 import './App.css'
 import LandingPage from './pages/landing-page/landing-page'
 import SystemDemo from './pages/system-demo/system-demo'

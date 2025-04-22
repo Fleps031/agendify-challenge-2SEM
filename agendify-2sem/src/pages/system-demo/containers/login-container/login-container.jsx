@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router'
 import LoginHome from '../../components/login-home/login-home'
 import LoginForm from '../../components/login-form/login-form'
 import './login-container.css'
