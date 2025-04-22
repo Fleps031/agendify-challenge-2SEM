@@ -7,26 +7,31 @@ export default function LoginHome({ mudarTipoUser }) {
   return (
     <div className="login-home d-flex vh-100">
       {/* coluna de seleção */}
-      <div className="flex-fill d-flex flex-column align-items-center justify-content-center bg-white p-4">
-        <h1 className="mb-4">
-          Bem vindo ao <span className="agendify-purple">Agendify!</span>
-        </h1>
-        <button
-          className="btn btn-gradient btn-lg mb-3"
-          onClick={() => mudarTipoUser('hospital')}
-        >
-          Sou um Hospital ou Parceiro
-        </button>
-        <button
-          className="btn btn-outline-gradient btn-lg"
-          onClick={() => mudarTipoUser('paciente')}
-        >
-          Sou um Paciente
-        </button>
+      <div className="left-col d-flex flex-column align-items-center justify-content-center">
+      <h1 className="mb-4">
+  Bem vindo ao <span className="agendify-gradient">Agendify!</span>
+</h1>
+               {/* Ambos iguais: outline branco + hover degradê */}
+                      <div className="btn-gradient-border mb-3">
+         <button
+           className="btn-gradient-text"
+           onClick={() => mudarTipoUser('hospital')}
+         >
+           Sou um Hospital ou Parceiro
+         </button>
+       </div>
+             <div className="btn-gradient-border">
+         <button
+           className="btn-gradient-text"
+           onClick={() => mudarTipoUser('paciente')}
+         >
+           Sou um Paciente
+         </button>
+       </div>
       </div>
 
       {/* coluna de imagem */}
-      <div className="flex-fill d-none d-md-block">
+      <div className="right-col d-none d-md-block">
         <img
           src={imgSelection}
           alt="Seleção Hospital ou Paciente"

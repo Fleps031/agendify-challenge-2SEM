@@ -1,5 +1,5 @@
 
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import './App.css'
 import LandingPage from './pages/landing-page/landing-page'
 import SystemDemo from './pages/system-demo/system-demo'
@@ -7,8 +7,14 @@ import LoginContainer from './pages/system-demo/containers/login-container/login
 import QueueContainer from './pages/system-demo/containers/queue-container/queue-container'
 
 function App() {
+
   return (
     <>
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 7b0dff1bb106eca92705701a4d7c1d0247bdc0e8
       <Routes>
         <Route path="/" element={<LandingPage />} />
 
