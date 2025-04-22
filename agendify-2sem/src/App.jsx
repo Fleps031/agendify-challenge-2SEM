@@ -10,11 +10,6 @@ function App() {
 
   return (
     <>
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 7b0dff1bb106eca92705701a4d7c1d0247bdc0e8
       <Routes>
         <Route path="/" element={<LandingPage />} />
 
