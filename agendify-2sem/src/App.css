@@ -33,8 +33,25 @@
   width: 2px;
 }
 
+.line-custom-ver4 {
+  height: 5px;
+  width: 75%;
+}
+
+.line-custom-ver5 {
+  width: 2px;
+}
+
 .w-150 {
   width: 150px;
+}
+
+.fonte-pequena {
+  font-size: 12 'px;
+}
+
+.mt-50 {
+  margin-top: 50px;
 }
 
 .mt-100 {
