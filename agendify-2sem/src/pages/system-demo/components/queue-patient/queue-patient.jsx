@@ -58,11 +58,9 @@ export default function QueuePatient() {
     return 'Boa noite';
   };
 
-  // Função para garantir que os nomes dos responsáveis e filhos sejam diferentes
   const getNomesDiferentes = () => {
     const nomeResponsavel = getRandom(nomesResponsáveis);
     let nomePaciente = getRandom(nomesPacientes);
-    // Garantindo que os nomes dos responsáveis e filhos sejam diferentes
     while (nomeResponsavel === nomePaciente) {
       nomePaciente = getRandom(nomesPacientes);
     }
@@ -73,11 +71,9 @@ export default function QueuePatient() {
 
   const saudacao = getSaudacao();
 
-  // Função para garantir que os exames agendados e na fila sejam diferentes
   const getExamesDiferentes = () => {
     let exameAgendado = getRandom(exames);
     let exameFila = getRandom(exames);
-    // Garantindo que os exames agendados e na fila sejam diferentes
     while (exameAgendado === exameFila) {
       exameFila = getRandom(exames);
     }
@@ -92,8 +88,8 @@ export default function QueuePatient() {
       tituloInicio: 'Você tem',
       qtdExames,
       tituloFim: 'agendado!',
-      nomePaciente, // Nome do paciente nos exames agendados
-      exame: exameAgendadoNome, // Exame agendado
+      nomePaciente,
+      exame: exameAgendadoNome, 
       dataInfo: getRandom(datas),
       infoExtra: false
     };
@@ -105,8 +101,8 @@ export default function QueuePatient() {
       tituloInicio: 'Você está na fila para',
       qtdExames,
       tituloFim: '!',
-      nomePaciente, // Nome do paciente na fila
-      exame: exameFilaNome, // Exame na fila
+      nomePaciente,
+      exame: exameFilaNome, 
       dataInfo: <>Solicitado para reagendamento dia {getRandom(datas)}</>,
       infoExtra: true
     };
@@ -114,7 +110,7 @@ export default function QueuePatient() {
 
   const queuePacientes = useMemo(() => {
     return Array.from({ length: 5 }, () => ({
-      nomePaciente: getRandom(nomesPacientes), // Nome dos pacientes nas consultas
+      nomePaciente: getRandom(nomesPacientes),
       nomeExame: getRandom(exames),
       dataExame: getRandom(datas),
     }));
@@ -122,7 +118,6 @@ export default function QueuePatient() {
 
   return (
     <div className="container py-4">
-      {/* Texto de boas-vindas */}
       <div className="row mb-4">
         <div className="col text-center">
           <h2 className="fw-bold fs-1">
@@ -131,9 +126,7 @@ export default function QueuePatient() {
         </div>
       </div>
 
-      {/* Área principal com 2 colunas */}
       <div className="row">
-        {/* Coluna 1 - Últimos atendimentos */}
         <div className="col-md-6 mb-4">
           <div className="gradient-border custom-shadow" style={{ height: '100%' }}>
             <div className="inner d-flex flex-column">
@@ -152,7 +145,6 @@ export default function QueuePatient() {
           </div>
         </div>
 
-        {/* Coluna 2 - Exames agendados + Fila */}
         <div className="col-md-6 d-flex flex-column gap-3 ">
           <CardSimples {...exameAgendado} />
           <CardSimples {...exameFila} />
