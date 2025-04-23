@@ -1,3 +1,42 @@
-* {
-    margin: 0;
+.bg-roxo-custom {
+    background-color: #6c5ce7;
 }
+
+.logo {
+  max-height: 50px;
+}
+
+.menu-toggle {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  text-align: right;
+}
+
+.menu a {
+  padding: 0.5rem 0;
+}
+
+.menu.ativo {
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .menu {
+    display: flex !important;
+    flex-direction: row;
+    text-align: right;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+}
+  
