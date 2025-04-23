@@ -10,6 +10,56 @@ const statusColors = {
     'Notificação enviada': 'status-notified',
 }
 
+const mockPacientes = [
+    {
+        name: 'Mark',
+        position: 'Grayson',
+        requestedAt: '12-03-2025',
+        status: 'Agendado'
+    },
+    {
+        name: 'Mark',
+        position: 'Grayson',
+        requestedAt: '12-03-2025',
+        status: 'Agendado'
+    },
+    {
+        id: '2',
+        name: 'Nolan',
+        position: 'Man',
+        requestedAt: '12-03-2025',
+        status: 'Aguardando confirmação'
+    },
+    {
+        id: '2',
+        name: 'Livia',
+        position: 'Pereira',
+        requestedAt: '12-03-2025',
+        status: 'Notificação enviada'
+    },
+    {
+        id: '2',
+        name: 'Livia',
+        position: 'Pereira',
+        requestedAt: '12-03-2025',
+        status: 'Em análise'
+    },
+    {
+        id: '2',
+        name: 'Livia',
+        position: 'Pereira',
+        requestedAt: '12-03-2025',
+        status: 'Em análise'
+    },
+    {
+        id: '2',
+        name: 'Livia',
+        position: 'Pereira',
+        requestedAt: '12-03-2025',
+        status: 'Em análise'
+    },
+]
+
 function DashboardTableRow({patientRow, patientIndex}){
     const statusClass = statusColors[patientRow?.status]
 
@@ -19,7 +69,7 @@ function DashboardTableRow({patientRow, patientIndex}){
     return(
         <>
             <tr className='text-center'>
-                <th scope="row">{patientIndex + 1}</th>
+                <th scope="row">{patientIndex + 100}</th>
                 <td>{patientRow?.name}</td>
                 <td>{patientRow?.position}</td>
                 <td>{patientRow?.requestedAt}</td>
@@ -35,55 +85,27 @@ function DashboardTableRow({patientRow, patientIndex}){
 }
 
 export default function QueueDashboard(){
-    const mockPacientes = [
-        {
-            name: 'Mark',
-            position: 'Grayson',
-            requestedAt: '12-03-2025',
-            status: 'Agendado'
-        },
-        {
-            name: 'Mark',
-            position: 'Grayson',
-            requestedAt: '12-03-2025',
-            status: 'Agendado'
-        },
-        {
-            id: '2',
-            name: 'Nolan',
-            position: 'Man',
-            requestedAt: '12-03-2025',
-            status: 'Aguardando confirmação'
-        },
-        {
-            id: '2',
-            name: 'Livia',
-            position: 'Pereira',
-            requestedAt: '12-03-2025',
-            status: 'Notificação enviada'
-        },
-        {
-            id: '2',
-            name: 'Livia',
-            position: 'Pereira',
-            requestedAt: '12-03-2025',
-            status: 'Em análise'
-        },
-        {
-            id: '2',
-            name: 'Livia',
-            position: 'Pereira',
-            requestedAt: '12-03-2025',
-            status: 'Em análise'
-        },
-        {
-            id: '2',
-            name: 'Livia',
-            position: 'Pereira',
-            requestedAt: '12-03-2025',
-            status: 'Em análise'
-        },
-    ]
+    const [person, setPerson] = useState();
+
+    useEffect(() => {
+        generateRandomUser();
+        console.log('aaa')
+    }, [])
+
+    async function generateRandomUser() {
+        const url = 'https://randomuser.me/api/';
+        const response = await fetch(url);
+        await response.json().then((res) => {mapRandomUser(res.results[0]);});
+    }
+
+    function mapRandomUser(results){
+        const newRandomUser = {
+            name: results?.name,
+            
+        }
+
+    }
+
     return(
         <>
             <div className='container-fluid'>
@@ -97,8 +119,8 @@ export default function QueueDashboard(){
 
                 <div className='row text-start space-between column-gap-5 ps-3'>
                     <div className='col-md-8 p-0'>
-                        <div className='container-fluid overflow-auto p-0'>
-                            <table className="table">
+                        <div className='container-fluid overflow-auto p-0 table-responsive border-bottom-0 card rounded-1 p-0 m-0 '>
+                            <table className="table m-0">
                                 <thead className='text-center'>
                                     <tr className='table-dark'>
                                         <th scope='col text-center'>ID</th>
