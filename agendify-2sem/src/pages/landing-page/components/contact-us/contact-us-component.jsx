@@ -17,13 +17,13 @@ export default function ContactUsComponent(){
                             <input className="m-1 w-75 rounded bg-black text-white rounded-pill" placeholder="E-mail" type="text" />
                             <input className="m-1 w-75 rounded bg-black text-white rounded-pill" placeholder="CPF/CNPJ" type="text" />
                             <input className="m-1 w-75 rounded bg-black text-white rounded-pill" placeholder="Número de telefone" type="text" />
-                            <button className="m-1 w-25 botao botao-suc txt-roxo-custom">Cadastre-se</button>
+                            <button className="m-1 w-25 botao botao-suc txt-roxo-custom"><span>Cadastre-se</span></button>
                         </div>
                     </div>
 
                     <div className="d-flex flex-column justify-content-end mt-5 align-items-center">
                         <h2>Já possui cadastro? Faça login e acesse o sistema!</h2>
-                        <button className="m-2 w-25 botao botao-suc">Fazer login!</button>
+                        <button className="m-2 w-25 botao botao-suc"><span>Fazer login!</span></button>
                     </div>
                 </div>
             </div>

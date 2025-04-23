@@ -1,3 +1,89 @@
 .altura-card-beneficio {
     height: 200px;
 }
+
+/* Estilos principais */
+.container-fluid {
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.altura-card-beneficio {
+  min-height: 250px;
+}
+
+.bg-roxo-custom {
+  background-color: #6c5ce7;
+}
+
+.txt-roxo-custom {
+  color: #6c5ce7;
+}
+
+.text-white {
+  color: white;
+}
+
+.line-custom-ver3 {
+  width: 5px;
+  height: 80%;
+  border-radius: 2px;
+}
+
+.fs-4 {
+  font-size: 1.25rem;
+}
+
+/* Alinhamento do conteúdo */
+p {
+  max-width: 800px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+  .fs-4 {
+    font-size: 1.1rem;
+  }
+
+  .altura-card-beneficio {
+    min-height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .line-custom-ver3 {
+    height: 60%;
+  }
+
+  .ms-5, .me-5 {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+
+  .ms-3, .me-3, .mt-3 {
+    margin: 0.5rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .d-flex {
+    text-align: center;
+  }
+
+  .justify-content-center,
+  .align-items-center {
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+
+  .line-custom-ver3 {
+    display: none;
+  }
+
+  p {
+    font-size: 0.5rem;
+    padding: 0 0.5rem;
+  }
+}
+  

@@ -1,0 +1,102 @@
+/* Layout e espaçamentos */
+.container-fluid {
+    padding: 0 1rem;
+}
+
+.mt-150 {
+  margin-top: 150px;
+}
+
+.bg-black {
+  background-color: #000;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.line-custom {
+  width: 100px;
+  height: 5px;
+  margin-top: 0.5rem;
+}
+
+.line-custom-ver2 {
+  width: 80%;
+  height: 2px;
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+
+.txt-roxo-custom {
+  color: #6c5ce7;
+}
+
+.ponto-grande {
+  font-size: 2rem;
+  line-height: 1;
+  padding-left: 0.3rem;
+}
+
+/* Efeito de escala ao passar o mouse */
+.scale-hover {
+  transition: transform 0.3s ease-in-out;
+}
+.scale-hover:hover {
+  transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .d-flex.justify-content-center > h1,
+  .d-flex.justify-content-center > h3 {
+    font-size: 1.5rem;
+  }
+
+  .ponto-grande {
+    font-size: 1.5rem;
+  }
+
+  .line-custom-ver2 {
+    width: 90%;
+  }
+
+  .d-flex.gap-3 img {
+    width: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .d-flex.justify-content-center {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .d-flex.gap-3 {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .d-flex.gap-3 img {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .line-custom,
+  .line-custom-ver2 {
+    width: 80%;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    align-self: center;
+  }
+}
+  
