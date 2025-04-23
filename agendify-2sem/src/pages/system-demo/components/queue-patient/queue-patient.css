@@ -46,8 +46,7 @@
   max-height: 500px;
 }
 .card-altura-ajustada {
-  min-height: 220px; /* valor ajustável conforme o Figma */
+  min-height: 200px; /* valor ajustável conforme o Figma */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
