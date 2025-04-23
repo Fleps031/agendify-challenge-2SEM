@@ -14,12 +14,12 @@ function CardExame({ nomePaciente, nomeExame, dataExame }) {
 
 function CardSimples({ tituloInicio, qtdExames, tituloFim, nomePaciente, exame, dataInfo, infoExtra }) {
   return (
-    <div className="gradient-border custom-shadow">
+    <div className="gradient-border custom-shadow card-altura-ajustada">
       <div className="inner">
         <h5 className="fw-bold fs-4">
           {tituloInicio} <span className="text-gradient">{qtdExames}</span> {tituloFim}
         </h5>
-        <p className="text-purple mb-1">{nomePaciente}</p>
+        <p className="text-purple">{nomePaciente}</p>
         <div className="border rounded p-4 d-flex justify-content-between w-100">
           <span>{exame}</span>
           <small className={infoExtra ? "text-muted text-end" : "text-purple"}>
@@ -60,7 +60,7 @@ export default function QueuePatient() {
     tituloFim: 'exame!',
     nomePaciente: 'Alice Pereira Dias',
     exame: 'Biópsia dos Pulmões',
-    dataInfo: <>Solicitado para reagendamento no dia<br />23/12/2024</>,
+    dataInfo: <>Solicitado para reagendamento dia 23/12/2024</>,
     infoExtra: true
   };
 
@@ -97,10 +97,10 @@ export default function QueuePatient() {
         </div>
 
         {/* Coluna 2 - Exames agendados + Fila */}
-        <div className="col-md-6 d-flex flex-column gap-3">
+        <div className="col-md-6 d-flex flex-column gap-3 ">
           <CardSimples {...exameAgendado} />
           <CardSimples {...exameFila} />
-          <p className="mt-2 small text-purple">
+          <p className="mt-2 fs-5 text-purple">
             Estamos aqui para cuidar de vocês! O exame da sua criança já está na fila e deve ser agendado dentro dos próximos 2 meses.
             Fique tranquilo, avisaremos assim que uma vaga estiver disponível.
           </p>
