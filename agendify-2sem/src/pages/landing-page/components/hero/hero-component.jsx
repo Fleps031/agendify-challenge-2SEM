@@ -6,7 +6,7 @@ import img03 from "../../../../images/carrossel/img03.jpg"
 export default function HeroComponent(){
     return(
         <>
-            <div className="d-flex flex-column p-0 w-100 mt-150 container-fluid">
+            <div className="d-flex flex-column p-0 w-100 mt-50 container-fluid">
                 <div className="d-flex justify-content-center">
                   <h1 className = 'align-self-end pb-2 fw-bold'>Agendify</h1>
                   <h3 className = 'txt-roxo-custom ponto-grande'>.</h3>

@@ -7,7 +7,6 @@ export default function ContactUsComponent(){
             <div className="d-flex container-fluid mt-100 justify-content-center align-items-center">
                 <div className="position-relative w-25 me-5">
                     <img className="w-100" src={contactPhoto} alt="Contato" />
-                    <p className="text-white position-absolute top-50 start-50 translate-middle text-center fs-5">Além de todas essas vantagens, o Agendify notifica seus pacientes por SMS, Whatsapp e E-mail para deixá-los informados em todas as etapas do processo!</p>
                 </div>
 
                 <div className="d-flex flex-column h-100 justify-content-center">
