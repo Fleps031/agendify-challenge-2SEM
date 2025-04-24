@@ -20,8 +20,8 @@ function CardSimples({ tituloInicio, qtdExames, tituloFim, nomePaciente, exame, 
     : tituloFim.replace('agendados', 'agendado');
 
   return (
-    <div className="gradient-border custom-shadow card-altura-ajustada">
-      <div className="inner">
+    <div className="gradient-border custom-shadow h-100 d-flex flex-column"> {/* Adicionado h-100 d-flex flex-column */}
+      <div className="inner d-flex flex-column h-100"> {/* Adicionado d-flex flex-column h-100 */}
         <h5 className="fw-bold fs-4">
           {tituloInicio} <span className="text-gradient">{qtdExames.extenso}</span> {exameLabel} {tituloFimCorrigido}
         </h5>
@@ -89,7 +89,7 @@ export default function QueuePatient() {
       qtdExames,
       tituloFim: 'agendado!',
       nomePaciente,
-      exame: exameAgendadoNome, 
+      exame: exameAgendadoNome,
       dataInfo: getRandom(datas),
       infoExtra: false
     };
@@ -102,7 +102,7 @@ export default function QueuePatient() {
       qtdExames,
       tituloFim: '!',
       nomePaciente,
-      exame: exameFilaNome, 
+      exame: exameFilaNome,
       dataInfo: <>Solicitado para reagendamento dia {getRandom(datas)}</>,
       infoExtra: true
     };
@@ -126,12 +126,12 @@ export default function QueuePatient() {
         </div>
       </div>
 
-      <div className="row">
+      <div className="row d-flex align-items-stretch">
         <div className="col-md-6 mb-4">
-          <div className="gradient-border custom-shadow" style={{ height: '100%' }}>
-            <div className="inner d-flex flex-column">
+          <div className="gradient-border custom-shadow d-flex flex-column h-100">
+            <div className="inner d-flex flex-column h-100">
               <h5 className="fw-bold text-center mb-3 fs-3">Seus últimos atendimentos</h5>
-              <div className="scroll-area height-max">
+              <div className="scroll-area height-max flex-grow-1">
                 {queuePacientes.map((el, idx) => (
                   <CardExame
                     key={idx}
@@ -145,7 +145,7 @@ export default function QueuePatient() {
           </div>
         </div>
 
-        <div className="col-md-6 d-flex flex-column gap-3 ">
+        <div className="col-md-6 d-flex flex-column gap-3">
           <CardSimples {...exameAgendado} />
           <CardSimples {...exameFila} />
           <p className="mt-2 fs-5 text-purple">

@@ -9,7 +9,7 @@
   border-radius: 12px;
   background: linear-gradient(90deg, #A25DDC, #F9578A);
   display: inline-block;
-  width: 100%; /* Garante que preencha o container */
+  width: 100%;
 }
 
 .inner {
@@ -46,7 +46,7 @@
   max-height: 500px;
 }
 .card-altura-ajustada {
-  min-height: 200px; /* valor ajustável conforme o Figma */
+  min-height: 200px;
   display: flex;
   flex-direction: column;
 }
