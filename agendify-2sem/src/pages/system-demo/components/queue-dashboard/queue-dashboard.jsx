@@ -1,13 +1,12 @@
-import { data } from 'react-router'
-import './queue-dashboard.css'
+import { useEffect, useState } from 'react';
 import { FaTrashAlt } from "react-icons/fa";
-import { useState, useEffect } from 'react';
+import './queue-dashboard.css';
 
 const statusColors = {
     'Agendado': 'status-booked',
-    'Aguardando confirmação': 'status-awaiting',
-    'Em análise': 'status-processing',
-    'Notificação enviada': 'status-notified',
+    'Aguardando confirmaÃ§Ã£o': 'status-awaiting',
+    'Em anÃ¡lise': 'status-processing',
+    'NotificaÃ§Ã£o enviada': 'status-notified',
 }
 
 const mockPacientes = [
@@ -28,45 +27,42 @@ const mockPacientes = [
         name: 'Nolan',
         position: 'Man',
         requestedAt: '12-03-2025',
-        status: 'Aguardando confirmação'
+        status: 'Aguardando confirmaÃ§Ã£o'
     },
     {
         id: '2',
         name: 'Livia',
         position: 'Pereira',
         requestedAt: '12-03-2025',
-        status: 'Notificação enviada'
+        status: 'NotificaÃ§Ã£o enviada'
     },
     {
         id: '2',
         name: 'Livia',
         position: 'Pereira',
         requestedAt: '12-03-2025',
-        status: 'Em análise'
+        status: 'Em anÃ¡lise'
     },
     {
         id: '2',
         name: 'Livia',
         position: 'Pereira',
         requestedAt: '12-03-2025',
-        status: 'Em análise'
+        status: 'Em anÃ¡lise'
     },
     {
         id: '2',
         name: 'Livia',
         position: 'Pereira',
         requestedAt: '12-03-2025',
-        status: 'Em análise'
+        status: 'Em anÃ¡lise'
     },
 ]
 
-function DashboardTableRow({patientRow, patientIndex}){
+function DashboardTableRow({ patientRow, patientIndex }) {
     const statusClass = statusColors[patientRow?.status]
 
-    console.log()
-
-    
-    return(
+    return (
         <>
             <tr className='text-center'>
                 <th scope="row">{patientIndex + 100}</th>
@@ -77,36 +73,40 @@ function DashboardTableRow({patientRow, patientIndex}){
                     <span className={'d-flex justify-content-center badge ' + statusClass}>{patientRow?.status}</span>
                 </td>
                 <td className='p-1'>
-                    <FaTrashAlt role='button' className='trash-can'/>
+                    <FaTrashAlt role='button' className='trash-can' />
                 </td>
             </tr>
         </>
     )
 }
 
-export default function QueueDashboard(){
+export default function QueueDashboard() {
     const [person, setPerson] = useState();
+    let isFirstUseCall = true;
 
     useEffect(() => {
-        generateRandomUser();
-        console.log('aaa')
+        if (isFirstUseCall) {
+            createUsers(5);
+            isFirstUseCall = false;
+        }
     }, [])
 
-    async function generateRandomUser() {
+    function createUsers(n) {
         const url = 'https://randomuser.me/api/';
-        const response = await fetch(url);
-        await response.json().then((res) => {mapRandomUser(res.results[0]);});
-    }
 
-    function mapRandomUser(results){
-        const newRandomUser = {
-            name: results?.name,
-            
+        let promises = []
+        let results = []
+
+        for (let i = 0; i <= n; i++) {
+            promises.push(setTimeout(() => {
+                fetch(url)
+            }, 1000))
         }
 
+        Promise.all([...promises]).then((values) => { console.log(values) })
     }
 
-    return(
+    return (
         <>
             <div className='container-fluid'>
                 <div className='row text-start mb-5'>
@@ -114,7 +114,7 @@ export default function QueueDashboard(){
                 </div>
 
                 <div className='row text-start mb-1'>
-                    <h2 className='fw-regular'>Requisições de agendamento/encaixe</h2>
+                    <h2 className='fw-regular'>RequisiÃ§Ãµes de agendamento/encaixe</h2>
                 </div>
 
                 <div className='row text-start space-between column-gap-5 ps-3'>
@@ -125,20 +125,20 @@ export default function QueueDashboard(){
                                     <tr className='table-dark'>
                                         <th scope='col text-center'>ID</th>
                                         <th scope='col'>Nome do paciente</th>
-                                        <th scope='col'>Posiçao na fila</th>
-                                        <th scope='col'>Data da solicitação</th>
+                                        <th scope='col'>PosiÃ§ao na fila</th>
+                                        <th scope='col'>Data da solicitaÃ§Ã£o</th>
                                         <th scope='col'>Status</th>
-                                        <th scope='col'>Ações</th>
+                                        <th scope='col'>AÃ§Ãµes</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                {mockPacientes.map((el, idx) => <DashboardTableRow patientRow={el} patientIndex={idx} key={idx}/>)}
+                                    {mockPacientes.map((el, idx) => <DashboardTableRow patientRow={el} patientIndex={idx} key={idx} />)}
                                 </tbody>
                             </table>
                         </div>
                     </div>
 
-                    
+
                     <div className='col-md'>
                         <h3 className='text-center'>Card</h3>
                         <div className='container-fluid'>
