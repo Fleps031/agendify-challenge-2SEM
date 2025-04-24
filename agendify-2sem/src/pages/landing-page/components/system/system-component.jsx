@@ -19,15 +19,15 @@ export default function SystemComponent(){
                     <p className = 'fw-bold mt-4'>Te oferecemos uma plataforma web completa, para você gerenciar, cadastrar e medir a sua fila de pacientes</p>
                 </div>
 
-                <div className='d-flex container-fluid mt-5 p-0 justify-content-center'>
-                    <div>
+                <div className='d-flex container-fluid mt-5 p-0 justify-content-start'>
+                    <div className='d-flex w-50 h-50 flex-column largura-max'>
                         <h5>Login integrado com o seu <span className = 'txt-roxo-custom'>CRM</span></h5>
-                        <img src={sistemaLogin} alt="" />
+                        <img src={sistemaLogin} alt="" className = 'largura-img'/>
                     </div>
                     <div className='d-flex m-3 line-custom-ver5 bg-roxo-custom'><p></p></div>
-                    <div>
+                    <div className='d-flex w-50 h-50 flex-column largura-max'>
                         <h5>API Restful documentada com <span className = 'txt-roxo-custom'>SWAGGER</span>, para acelerar a sua integração.</h5>
-                        <img src={sistemaSwagger} alt="" />
+                        <img src={sistemaSwagger} alt="" className = 'w-75'/>
                     </div>
                     
                 </div>

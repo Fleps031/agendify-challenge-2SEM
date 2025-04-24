@@ -1,0 +1,60 @@
+/* Espaçamentos e cores */
+.mt-50 {
+    margin-top: 3rem;
+}
+
+.bg-black {
+  background-color: #000;
+}
+
+.p-4 {
+  padding: 1.5rem;
+}
+
+.text-white {
+  color: white;
+}
+
+.txt-roxo-custom {
+  color: #6c5ce7;
+}
+
+.fonte-pequena {
+  font-size: 0.9rem;
+}
+
+/* Layout flexível */
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.container-fluid {
+  width: 100%;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .d-flex.mt-50.bg-black.p-4 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .d-flex.flex-column.container-fluid.justify-content-center {
+    align-items: center;
+  }
+
+  .d-flex.flex-column.container-fluid.justify-content-center.align-items-end {
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  .fonte-pequena {
+    font-size: 0.8rem;
+  }
+}
+  

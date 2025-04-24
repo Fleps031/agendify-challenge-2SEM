@@ -5,3 +5,73 @@
 .borda {
     border: 2px solid #6f23b659;
 }
+
+/* Estilos gerais */
+.container-fluid {
+    padding: 0 1rem;
+}
+
+.mt-100 {
+  margin-top: 100px;
+}
+
+.line-custom {
+  width: 100px;
+  height: 5px;
+  margin-top: 0.5rem;
+}
+
+.bg-roxo-custom {
+  background-color: #6c5ce7; /* roxo */
+}
+
+.borda {
+  border: 1px solid #ccc;
+}
+
+.sombra {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.scale-hover:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease-in-out;
+}
+
+.w-150 {
+  width: 150px;
+}
+
+.fs-5 {
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .w-75 {
+    width: 90% !important;
+  }
+
+  .d-flex {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .w-150 {
+    width: 100px;
+  }
+
+  h1.fs-5 {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .w-150 {
+    width: 80px;
+  }
+
+  h1.fs-5 {
+    font-size: 0.95rem;
+  }
+}

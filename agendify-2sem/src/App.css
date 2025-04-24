@@ -1,5 +1,7 @@
 #root {
   margin: 0 auto;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .scale-hover:hover {
@@ -72,6 +74,7 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
