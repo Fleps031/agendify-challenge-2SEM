@@ -1,156 +1,50 @@
-.img-parceiro {
-    filter: grayscale(100%);
-    transition: filter 0.3s ease;
-}
-  
-.img-parceiro:hover {
-    filter: grayscale(0%);
+.titulo-secao {
+  font-weight: bold;
 }
 
-/* Estilos gerais */
-.container-fluid {
-    padding: 0 1rem;
-    width: 100%;
-}
-
-.margin-comeco {
-    margin-left: 32px;
-}
-
-.largura-img {
-    width: 600px;
-}
-
-.largura-max {
-    max-width: fit-content;
-}
-
-.mt-5 {
-  margin-top: 3rem;
-}
-
-.ms-5 {
-  margin-left: 3rem;
-}
-
-.p-0 {
-  padding: 0 !important;
-}
-
-.ps-4 {
-  padding-left: 1.5rem;
-}
-
-.p-4 {
-  padding: 1.5rem;
-}
-
-.pb-2 {
-  padding-bottom: 0.5rem;
-}
-
-.gap-3 {
-  gap: 1rem;
+.texto-descricao {
+  max-width: 700px;
 }
 
 .line-custom-ver4 {
-  width: 100px;
-  height: 4px;
+  width: 120px;
+  height: 3px;
   margin-top: 0.5rem;
 }
 
 .line-custom-ver5 {
-  width: 5px;
-  height: auto;
-  margin: 0 1.5rem;
-}
-
-.bg-roxo-custom {
-  background-color: #6c5ce7;
-}
-
-.txt-roxo-custom {
-  color: #6c5ce7;
-}
-
-.fw-bold {
-  font-weight: bold;
-}
-
-.fw-light {
-  font-weight: 300;
+  width: 2px;
+  min-height: 100px;
+  background-color: #8000ff;
 }
 
 .img-parceiro {
-  max-height: 60px;
-  object-fit: contain;
-  margin: 0 10px;
+  max-width: 140px;
+  height: auto;
 }
 
-.w-75 {
-  width: 75%;
+.largura-img {
+  max-width: 100%;
 }
 
-/* Responsividade */
-@media (max-width: 992px) {
+.largura-max {
+  max-width: 500px;
+}
+
+@media (max-width: 768px) {
+  .line-custom-ver5 {
+    display: none !important;
+  }
+
   .ms-5 {
-    margin-left: 1rem;
+    margin-left: 1rem !important;
   }
 
   .ps-4 {
-    padding-left: 1rem;
+    padding-left: 1rem !important;
   }
 
-  .line-custom-ver5 {
-    display: none;
-  }
-
-  .d-flex.container-fluid.mt-5.p-0.justify-content-center {
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-  }
-
-  .d-flex.container-fluid.p-4.gap-3.pb-2 {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .img-parceiro {
-    max-height: 50px;
-    margin: 10px;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  h2, h5, h6, p {
-    text-align: center;
-    padding: 0 1rem;
+  .sistema-bloco {
+    flex-direction: column !important;
   }
 }
-
-@media (max-width: 576px) {
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  h5 {
-    font-size: 1rem;
-  }
-
-  p {
-    font-size: 0.95rem;
-  }
-
-  .w-75 {
-    width: 100%;
-  }
-
-  .line-custom-ver4 {
-    width: 60px;
-  }
-}
-  

@@ -1,216 +1,74 @@
-.botao {
-    border: 1px solid #6E23B6;
-    background-color: white;
-    color: black;
-    padding: 14px 28px;
-    font-size: 16px;
-    cursor: pointer;
-}
-  
-.botao-suc {
-    border-color: #6E23B6;
-    color: black;
-}
-  
-.botao-suc:hover {
-    background-color: #6E23B6;
-    color: white;
+.contato-container {
+  padding: 2rem 0;
 }
 
-/* Layout principal */
-.container-fluid {
-    padding: 1rem;
-    width: 100%;
-}
-
-.mt-100 {
-  margin-top: 6rem;
-}
-
-.w-25 {
-  width: 25%;
-}
-
-.w-50 {
-  width: 50%;
-}
-
-.w-75 {
-  width: 75%;
-}
-
-.w-100 {
-  width: 100%;
-}
-
-.h-100 {
-  height: 100%;
-}
-
-.h-50 {
-  height: 50%;
-}
-
-.m-1 {
-  margin: 0.25rem;
-}
-
-.m-2 {
-  margin: 0.5rem;
-}
-
-.mt-4 {
-  margin-top: 1.5rem;
-}
-
-.mt-5 {
-  margin-top: 3rem;
-}
-
-.me-5 {
-  margin-right: 3rem;
-}
-
-.p-2 {
-  padding: 0.75rem;
-}
-
-.text-white {
-  color: white;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.bg-black {
-  background-color: black;
-}
-
-.rounded-pill {
-  border-radius: 50rem;
-}
-
-.rounded {
-  border-radius: 1rem;
+.titulo-contato,
+.titulo-login {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .borda {
-  border: 2px solid #6c5ce7;
+  border: 2px solid #8000ff;
 }
 
 .sombra {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.botao {
-  padding: 0.5rem 1rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 50rem;
-  cursor: pointer;
-}
-
-.botao-suc {
-  background-color: #e0dfff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .txt-roxo-custom {
-  color: #6c5ce7;
+  color: #8000ff;
 }
 
-.position-relative {
-  position: relative;
+.bg-roxo-custom {
+  background-color: #8000ff;
 }
 
-.position-absolute {
-  position: absolute;
+.form-custom {
+  width: 75%;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  background-color: #000;
+  color: #fff;
+  border: none;
 }
 
-.top-50 {
-  top: 50%;
+.form-custom::placeholder {
+  color: #ccc;
 }
 
-.start-50 {
-  left: 50%;
+.btn-custom {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 30px;
+  background-color: #8000ff;
+  color: #fff;
+  font-weight: 600;
+  transition: background-color 0.3s;
 }
 
-.translate-middle {
-  transform: translate(-50%, -50%);
+.btn-custom:hover {
+  background-color: #6200cc;
 }
 
 /* Responsividade */
-@media (max-width: 992px) {
-  .w-25 {
-    width: 40%;
-  }
-
-  .w-50 {
-    width: 75%;
-  }
-
-  .w-75 {
-    width: 85%;
-  }
-
-  .me-5 {
-    margin-right: 1rem;
-  }
-
-  .h-50 {
-    height: auto;
-  }
-
-  span {
-    display: none;
-  }
-
-  .fs-5 {
-    font-size: 1rem;
-  }
-
-  .botao {
-    width: 50% !important;
-  }
-
-  .text-center {
-    padding: 0 0.5rem;
-  }
-}
-
 @media (max-width: 768px) {
-  .d-flex.container-fluid.mt-100.justify-content-center.align-items-center {
-    flex-direction: column;
-    text-align: center;
-    gap: 2rem;
+  .mt-100 {
+    margin-top: 2rem !important;
   }
 
-  .position-relative {
-    width: 100%;
-    margin-bottom: 2rem;
-  }
-
-  .w-25,
-  .w-50,
-  .w-75 {
-    width: 100% !important;
-  }
-
-  span {
-    display: none;
-  }
-
-  .text-white.position-absolute {
-    position: static;
-    transform: none;
-    margin-top: 1rem;
-    color: white;
-    font-size: 0.95rem;
-  }
-
-  h2, h3 {
+  .titulo-contato,
+  .titulo-login {
     font-size: 1.2rem;
     padding: 0 1rem;
   }
+
+  .form-custom,
+  .btn-custom {
+    width: 90% !important;
+  }
+
+  .box-form {
+    width: 100% !important;
+  }
 }
-  
