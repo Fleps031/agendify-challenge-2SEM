@@ -7,7 +7,7 @@ export default function HeroComponent(){
     return(
         <>
             <div className="d-flex flex-column p-0 w-100 mt-50 container-fluid">
-                <div className="d-flex justify-content-center">
+                <div className="d-flex flex-column justify-content-center">
                   <h1 className = 'align-self-center pb-2 fw-bold'>Agendify</h1>
                   <h3 className = 'txt-roxo-custom ponto-grande'>.</h3>
                   <h3 className = 'align-self-end pb-2 ms-3'>Organize e facilite a rotina dos seus pacientes</h3>
@@ -15,7 +15,7 @@ export default function HeroComponent(){
 
                 <div className = 'line-custom bg-roxo-custom mx-auto'></div>
 
-                <div className="d-flex justify-content-center mt-5">
+                <div className="d-flex justify-content-center mt-3 ms-3">
                     <h3>Serviços de fila e agendamento pra encaixar seu paciente no <span className = 'txt-roxo-custom'>momento</span> certo.</h3>
                 </div>
 
