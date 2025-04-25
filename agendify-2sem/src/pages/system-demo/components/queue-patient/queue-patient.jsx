@@ -3,9 +3,9 @@ import { useMemo } from 'react';
 
 function CardExame({ nomePaciente, nomeExame, dataExame }) {
   return (
-    <div className="mb-3">
+    <div className="mb-3 ">
       <p className="text-purple mb-1">{nomePaciente}</p>
-      <div className="height-total border rounded p-2 d-flex justify-content-between align-items-center">
+      <div className="height-total border rounded p-2 d-flex justify-content-between align-items-center flex-wrap fs-5 card-content-bootstrap">
         <span>{nomeExame}</span>
         <span className="text-purple">{dataExame}</span>
       </div>
@@ -20,13 +20,13 @@ function CardSimples({ tituloInicio, qtdExames, tituloFim, nomePaciente, exame, 
     : tituloFim.replace('agendados', 'agendado');
 
   return (
-    <div className="gradient-border custom-shadow h-100 d-flex flex-column"> {/* Adicionado h-100 d-flex flex-column */}
-      <div className="inner d-flex flex-column h-100"> {/* Adicionado d-flex flex-column h-100 */}
+    <div className="gradient-border custom-shadow h-100 d-flex flex-column">
+      <div className="inner d-flex flex-column h-100">
         <h5 className="fw-bold fs-4">
           {tituloInicio} <span className="text-gradient">{qtdExames.extenso}</span> {exameLabel} {tituloFimCorrigido}
         </h5>
         <p className="text-purple">{nomePaciente}</p>
-        <div className="border rounded p-4 d-flex justify-content-between w-100">
+        <div className="border rounded p-4 d-flex justify-content-between w-100 flex-wrap fs-5 card-content-bootstrap h-100">
           <span>{exame}</span>
           <small className={infoExtra ? "text-muted text-end" : "text-purple"}>
             {dataInfo}
@@ -128,7 +128,7 @@ export default function QueuePatient() {
 
       <div className="row d-flex align-items-stretch">
         <div className="col-md-6 mb-4">
-          <div className="gradient-border custom-shadow d-flex flex-column h-100">
+          <div className="gradient-border custom-shadow d-flex flex-column ">
             <div className="inner d-flex flex-column h-100">
               <h5 className="fw-bold text-center mb-3 fs-3">Seus últimos atendimentos</h5>
               <div className="scroll-area height-max flex-grow-1">
@@ -145,7 +145,7 @@ export default function QueuePatient() {
           </div>
         </div>
 
-        <div className="col-md-6 d-flex flex-column gap-3">
+        <div className="col-md-6 d-flex flex-column gap-3 h-100">
           <CardSimples {...exameAgendado} />
           <CardSimples {...exameFila} />
           <p className="mt-2 fs-5 text-purple">

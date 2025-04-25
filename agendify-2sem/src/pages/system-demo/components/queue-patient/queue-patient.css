@@ -50,3 +50,16 @@
   display: flex;
   flex-direction: column;
 }
+
+@media (max-width: 469px) {
+  .card-content-bootstrap {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+}
+@media (min-width: 576px) {
+  .card-content-bootstrap {
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+}
