@@ -8,10 +8,6 @@
   font-weight: bold;
 }
 
-.borda {
-  border: 2px solid #8000ff;
-}
-
 .sombra {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
@@ -39,11 +35,9 @@
 
 .btn-custom {
   padding: 0.5rem 1rem;
-  border: none;
   border-radius: 30px;
-  background-color: #8000ff;
-  color: #fff;
   font-weight: 600;
+  border: 2px solid #8000ff;
   transition: background-color 0.3s;
 }
 

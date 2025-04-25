@@ -1,5 +1,20 @@
+.img-parceiro {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.img-parceiro:hover {
+  filter: grayscale(0%);
+}
+
+
 .titulo-secao {
   font-weight: bold;
+}
+
+.centralizacao {
+  align-items: center;
+  justify-content: center;
 }
 
 .texto-descricao {
@@ -34,6 +49,11 @@
 @media (max-width: 768px) {
   .line-custom-ver5 {
     display: none !important;
+  }
+
+  .centralizacao {
+    align-items: center;
+    justify-content: center;
   }
 
   .ms-5 {
