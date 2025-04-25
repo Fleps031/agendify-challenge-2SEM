@@ -3,31 +3,27 @@ import logoAgendify from '../../../../images/logo.svg'
 import { useState } from 'react'
 
 export default function HeaderComponent(){
-    const [menuAberto, setMenuAberto] = useState(false)
+  const [menuAberto, setMenuAberto] = useState(false);
 
-    return(
-        <section className="container-fluid align-items-center bg-roxo-custom w-100">
-            <div className="row justify-content-between align-items-center px-3">
-                <div className="col-6 d-flex gap-3 align-items-center">
-                    <img src={logoAgendify} alt="logo Agendify" className="img-fluid logo" />
-                    <a href="#" className="text-decoration-none"><h1 className="text-white">Agendify</h1></a>
-                </div>
+  return (
+    <section className="navbar bg-roxo-custom p-3">
+      <div className="navbar-container">
+        <div className="navbar-brand">
+          <img src={logoAgendify} alt="logo Agendify" className="rounded"/>
+          <a href="#" className="text-decoration-none"><h1 className="text-white m-0">Agendify</h1></a>
+        </div>
 
-                <div className="d-md-none col-6 d-flex justify-content-end">
-                    <button className="menu-toggle" onClick={() => setMenuAberto(!menuAberto)}>
-                        ☰
-                    </button>
-                </div>
+        <button className="menu-toggle d-md-none ms-4" onClick={() => setMenuAberto(!menuAberto)} aria-label="Abrir menu">☰</button>
+      </div>
 
-                <div className={`menu col-md-6 d-md-flex flex-md-row align-items-center justify-content-end gap-3 ${menuAberto ? 'ativo' : ''}`}>
-                    <a href="#" className="text-decoration-none text-white link-dark">Início</a>
-                    <a href="#" className="text-decoration-none text-white link-dark">Serviços</a>
-                    <a href="#" className="text-decoration-none text-white link-dark">Benefícios</a>
-                    <a href="#" className="text-decoration-none text-white link-dark">Sistemas</a>
-                    <a href="#" className="text-decoration-none text-white link-dark">Juntar-se</a>
-                    <a href="#" className="text-decoration-none text-white link-dark">Login</a>
-                </div>
-            </div>
-        </section>
-    )
+      <div className={`menu-links ${menuAberto ? 'show' : ''}`}>
+        <a href="#" className="text-decoration-none text-white">Início</a>
+        <a href="#" className="text-decoration-none text-white">Serviços</a>
+        <a href="#" className="text-decoration-none text-white">Benefícios</a>
+        <a href="#" className="text-decoration-none text-white">Sistemas</a>
+        <a href="#" className="text-decoration-none text-white">Cadastro</a>
+        <a href="#" className="text-decoration-none text-white">Login</a>
+      </div>
+    </section>
+  );
 }

@@ -56,20 +56,16 @@ p {
   }
 
   .ms-5, .me-5 {
-    margin-left: 1rem !important;
-    margin-right: 1rem !important;
+    margin-left: 1rem ;
+    margin-right: 1rem;
   }
 
   .ms-3, .me-3, .mt-3 {
-    margin: 0.5rem !important;
+    margin: 0.5rem;
   }
 }
 
 @media (max-width: 768px) {
-  .d-flex {
-    text-align: center;
-  }
-
   .justify-content-center,
   .align-items-center {
     justify-content: center;

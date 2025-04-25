@@ -1,42 +1,64 @@
-.bg-roxo-custom {
-    background-color: #6c5ce7;
+@media screen and (max-width: 1000px){
+  .navbar-container {
+    width: 100%;
+  }
 }
 
-.logo {
-  max-height: 50px;
+.navbar {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .menu-toggle {
-  font-size: 2rem;
+  font-size: 28px;
   background: none;
   border: none;
   color: white;
   cursor: pointer;
 }
 
-.menu {
+.menu-links {
   display: none;
   flex-direction: column;
-  text-align: right;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-.menu a {
-  padding: 0.5rem 0;
-}
-
-.menu.ativo {
+.menu-links.show {
   display: flex;
 }
 
 @media (min-width: 768px) {
-  .menu {
-    display: flex !important;
+  .navbar {
     flex-direction: row;
-    text-align: right;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .menu-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+    margin-top: 0;
   }
 
   .menu-toggle {
     display: none;
+    align-items: end;
   }
 }
-  

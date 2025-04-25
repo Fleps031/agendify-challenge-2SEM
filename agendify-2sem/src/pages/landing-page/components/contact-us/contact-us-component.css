@@ -200,12 +200,6 @@
     display: none;
   }
 
-  input,
-  button {
-    width: 90% !important;
-    height: 20px;
-  }
-
   .text-white.position-absolute {
     position: static;
     transform: none;
