@@ -82,21 +82,31 @@
 }
 
 @media (max-width: 768px) {
-  .gallery-img {
-    width: 45%;
-  }
-
   .subtitle {
     margin-left: 0;
+  }
+
+  .organizacao {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .organizacao img {
+    height: 50%;
   }
 }
 
 @media (max-width: 480px) {
-  .gallery-img {
-    width: 90%;
-  }
-
   .ponto-grande {
     font-size: 1.5rem;
+  }
+
+  .organizacao {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .organizacao img {
+    height: 50%;
   }
 }

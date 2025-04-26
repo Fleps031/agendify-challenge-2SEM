@@ -1,6 +1,7 @@
 import '../header/header-component.css'
 import logoAgendify from '../../../../images/logo.svg'
-import { useState } from 'react'
+import { useState } from 'react'  
+import { Link } from "react-router";
 
 export default function HeaderComponent(){
   const [menuAberto, setMenuAberto] = useState(false);
@@ -17,12 +18,12 @@ export default function HeaderComponent(){
       </div>
 
       <div className={`menu-links ${menuAberto ? 'show' : ''}`}>
-        <a href="#" className="text-decoration-none text-white">Início</a>
-        <a href="#" className="text-decoration-none text-white">Serviços</a>
-        <a href="#" className="text-decoration-none text-white">Benefícios</a>
-        <a href="#" className="text-decoration-none text-white">Sistemas</a>
-        <a href="#" className="text-decoration-none text-white">Cadastro</a>
-        <a href="#" className="text-decoration-none text-white">Login</a>
+        <a href="#hero" className="text-decoration-none texto-preto">Início</a>
+        <a href="#servicos" className="text-decoration-none texto-preto">Serviços</a>
+        <a href="#beneficios" className="text-decoration-none texto-preto">Benefícios</a>
+        <a href="#sistema" className="text-decoration-none texto-preto">Sistemas</a>
+        <a href="#contato" className="text-decoration-none texto-preto">Cadastre-se</a>
+        <Link className = 'text-decoration-none texto-preto' to="/sistema">Login</Link>
       </div>
     </section>
   );

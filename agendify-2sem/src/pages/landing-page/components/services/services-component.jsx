@@ -6,7 +6,7 @@ import card03 from "../../../../images/services/card03.png"
 export default function ServicesComponent(){
     return(
         <>
-            <div className = 'd-flex flex-column container-fluid mt-100 redimensionamento'>
+            <div id='servicos' className = 'd-flex flex-column container-fluid mt-100 redimensionamento'>
                 <div className="d-flex flex-column align-items-center cards-redimensionamento">
                     <h1>Nossos serviços</h1>
                     <div className = 'line-custom bg-roxo-custom'></div>

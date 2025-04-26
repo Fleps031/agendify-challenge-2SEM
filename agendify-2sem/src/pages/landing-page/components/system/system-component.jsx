@@ -8,7 +8,7 @@ import pagePacientes from "../../../../images/system/pagePacientes.jpg"
 
 export default function SystemComponent(){
   return (
-    <div className="d-flex flex-column container-fluid sistema-container centralizacao">
+    <div id='sistema' className="d-flex flex-column container-fluid sistema-container centralizacao">
       <div className="d-flex flex-column align-items-start mt-5">
         <h2 className="titulo-secao">Nosso sistema</h2>
         <div className="line-custom-ver4 bg-roxo-custom"></div>
@@ -44,7 +44,7 @@ export default function SystemComponent(){
         <div className="d-flex flex-column align-items-center">
           <h2 className="titulo-secao">Nosso sistema</h2>
           <div className="line-custom-ver4 bg-roxo-custom"></div>
-          <img className="w-75 img-fluid mt-3" src={pagePacientes} alt="" />
+          <img className="w-100 img-fluid mt-3" src={pagePacientes} alt="" />
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@ import './benefits-component.css'
 export default function BenefitsComponent(){
     return(
         <>
-            <div className='d-flex container-fluid flex-column w-100 p-0'>
+            <div id = "beneficios" className='d-flex container-fluid flex-column w-100 p-0'>
                 <div className='altura-card-beneficio d-flex justify-content-center align-items-center'>
                     <h1 className='txt-roxo-custom text-center'>Por que escolher a Agendify?</h1>
                 </div>

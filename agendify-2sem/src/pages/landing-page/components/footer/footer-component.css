@@ -12,19 +12,40 @@
   color: #8000ff;
 }
 
+.largura-rodape {
+  width: 50%;
+  align-items: end;
+}
+
 .fonte-pequena {
   font-size: 0.9rem;
   opacity: 0.7;
 }
 
-/* Responsivo */
+.margem-rodape {
+  margin-top: 5rem;
+}
+
 @media (max-width: 768px) {
   .rodape-logo {
     font-size: 1.5rem;
   }
 
+  .largura-rodape {
+    width: 100%;
+    align-items: center;
+  }
+
+  .rodape {
+    margin-top: 5rem;
+  }
+
+  .fonte-pequena {
+    text-align: center;
+  }
+
   .rodape-container {
     flex-direction: column;
-    align-items: flex-start !important;
+    align-items: center;
   }
 }
