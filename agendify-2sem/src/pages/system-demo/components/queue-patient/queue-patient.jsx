@@ -13,14 +13,15 @@ function CardExame({ nomePaciente, nomeExame, dataExame }) {
   )
 }
 
-function CardSimples({ tituloInicio, qtdExames, tituloFim, nomePaciente, exame, dataInfo, infoExtra }) {
+function CardSimples({ tituloInicio, qtdExames, tituloFim, nomePaciente, exame, dataInfo, infoExtra, altura=''}) {
   const exameLabel = qtdExames.qtd > 1 ? 'exames' : 'exame';
   const tituloFimCorrigido = qtdExames.qtd > 1
     ? tituloFim.replace('agendado', 'agendados')
     : tituloFim.replace('agendados', 'agendado');
 
+
   return (
-    <div className="gradient-border custom-shadow h-100 d-flex flex-column">
+    <div className={'gradient-border custom-shadow d-flex flex-column ' + altura} >
       <div className="inner d-flex flex-column h-100">
         <h5 className="fw-bold fs-4">
           {tituloInicio} <span className="text-gradient">{qtdExames.extenso}</span> {exameLabel} {tituloFimCorrigido}
@@ -28,7 +29,7 @@ function CardSimples({ tituloInicio, qtdExames, tituloFim, nomePaciente, exame, 
         <p className="text-purple">{nomePaciente}</p>
         <div className="border rounded p-4 d-flex justify-content-between w-100 flex-wrap fs-5 card-content-bootstrap h-100">
           <span>{exame}</span>
-          <small className={infoExtra ? "text-muted text-end" : "text-purple"}>
+          <small className={infoExtra ? "text-muted" : "text-purple"}>
             {dataInfo}
           </small>
         </div>
@@ -85,6 +86,7 @@ export default function QueuePatient() {
   const exameAgendado = useMemo(() => {
     const qtdExames = getRandom(numerosPorExtenso);
     return {
+      altura:' h-50 ',
       tituloInicio: 'Você tem',
       qtdExames,
       tituloFim: 'agendado!',
@@ -98,6 +100,7 @@ export default function QueuePatient() {
   const exameFila = useMemo(() => {
     const qtdExames = getRandom(numerosPorExtenso);
     return {
+      altura:'h-50',
       tituloInicio: 'Você está na fila para',
       qtdExames,
       tituloFim: '!',
