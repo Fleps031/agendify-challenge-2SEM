@@ -21,11 +21,33 @@ export default function HeroComponent(){
 
                 <div className="d-flex flex-column bg-black w-100 mt-5 h-100 p-4 justify-content-center align-items-center">
                     <div className="mb-3 line-custom-ver2 bg-white"></div>
-                    <div className="d-flex gap-3 justify-content-center align-items-center organizacao">
-                      <img src={img01} alt="img01" className = 'w-25 scale-hover'/>
-                      <img src={img02} alt="img02" className = 'w-25 scale-hover'/>
-                      <img src={img03} alt="img03" className = 'w-25 scale-hover'/>
+                    <div className="d-none d-md-flex justify-content-center gap-3 flex-wrap">
+                        <img src={img01} className="img-fluid scale-hover" alt="Imagem 1" />
+                        <img src={img02} className="img-fluid scale-hover" alt="Imagem 2" />
+                        <img src={img03} className="img-fluid scale-hover" alt="Imagem 3" />
                     </div>
+                    <div className="d-md-none">
+                        <div id="carouselImagens" className="carousel slide" data-bs-ride="carousel">
+                            <div className="carousel-inner">
+                                <div className="carousel-item active">
+                                    <img src={img01} className="d-block w-100" alt="Imagem 1" />
+                                </div>
+                                <div className="carousel-item">
+                                    <img src={img02} className="d-block w-100" alt="Imagem 2" />
+                                </div>
+                                <div className="carousel-item">
+                                    <img src={img03} className="d-block w-100" alt="Imagem 3" />
+                                </div>
+                            </div>
+                            <button className="carousel-control-prev" type="button" data-bs-target="#carouselImagens" data-bs-slide="prev">
+                                <span className="carousel-control-prev-icon"></span>
+                            </button>
+                            <button className="carousel-control-next" type="button" data-bs-target="#carouselImagens" data-bs-slide="next">
+                                <span className="carousel-control-next-icon"></span>
+                            </button>
+                        </div>
+                    </div>
+
                     <div className="mt-3 line-custom-ver2 bg-white"></div>
                 </div>
             </div>
