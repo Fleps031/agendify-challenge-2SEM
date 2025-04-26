@@ -15,7 +15,7 @@ export default function HeroComponent(){
 
                 <div className = 'line-custom bg-roxo-custom mx-auto'></div>
 
-                <div className="d-flex justify-content-center mt-3 ms-3">
+                <div className="d-flex justify-content-center text-center mt-3 ms-3">
                     <h3>Serviços de fila e agendamento pra encaixar seu paciente no <span className = 'txt-roxo-custom'>momento</span> certo.</h3>
                 </div>
 

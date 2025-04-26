@@ -18,14 +18,14 @@ export default function ContactUsComponent(){
                 <input className="form-custom" placeholder="E-mail" type="text" />
                 <input className="form-custom" placeholder="CPF/CNPJ" type="text" />
                 <input className="form-custom" placeholder="Número de telefone" type="text" />
-                <button className="btn-custom txt-custom-roxo mt-2"><span>Cadastre-se</span></button>
+                <button className="btn-custom txt-custom-roxo bg-white mt-2"><span>Cadastre-se</span></button>
               </div>
             </div>
             
             <div className = 'row'> 
               <div className="d-flex flex-column mt-5 justify-content-center w-75 mx-auto">
                 <h2 className="titulo-login text-center">Já possui cadastro? Faça login e acesse o sistema!</h2>
-                <Link role='button' className = 'text-decoration-none txt-roxo-custom text-center align-self-center btn-custom txt-custom-roxo mt-2 largura-botao' to="/sistema">Fazer login!</Link>
+                <Link role='button' className = 'text-decoration-none txt-roxo-custom text-center bg-white align-self-center btn-custom txt-custom-roxo mt-2 largura-botao' to="/sistema">Fazer login!</Link>
               </div>
             </div> 
           </div>

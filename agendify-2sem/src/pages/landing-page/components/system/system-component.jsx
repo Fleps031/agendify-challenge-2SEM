@@ -11,7 +11,7 @@ export default function SystemComponent(){
     <div id='sistema' className="d-flex flex-column container-fluid sistema-container centralizacao">
       <div className="d-flex flex-column align-items-start mt-5">
         <h2 className="titulo-secao">Nosso sistema</h2>
-        <div className="line-custom-ver4 bg-roxo-custom"></div>
+        <div className = 'line-custom bg-roxo-custom'></div>
       </div>
     
       <div className="d-flex justify-content-center">
@@ -40,10 +40,9 @@ export default function SystemComponent(){
         <h6>Ou conecte-se aos CRMs mais utilizados no mercado, sem complicações.</h6>
       </div>
     
-      <div className="d-flex container-fluid mt-5 w-100 justify-content-center ">
+      <div className="d-flex container-fluid mt-5 mb-5 w-100 justify-content-center ">
         <div className="d-flex flex-column align-items-center">
-          <h2 className="titulo-secao">Nosso sistema</h2>
-          <div className="line-custom-ver4 bg-roxo-custom"></div>
+          <h2 className="titulo-secao">Adicione e gerencie sua fila de pacientes com facilidade</h2>
           <img className="w-100 img-fluid mt-3" src={pagePacientes} alt="" />
         </div>
       </div>
