@@ -80,8 +80,9 @@
 
 @media (max-width: 768px) {
   .largura-foto-contato {
-    width: 50%;
+    width: 90%;
     margin-left: 0;
+    margin-bottom: 10px;
   }
 
   .largura-botao {

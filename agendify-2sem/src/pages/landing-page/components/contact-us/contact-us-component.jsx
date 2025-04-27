@@ -6,7 +6,7 @@ export default function ContactUsComponent(){
     return(
       <>
         <div id='contato' className="row text-start space-between mt-4">
-          <div className="d-flex col-md-3 justify-content-center">
+          <div className="d-flex col-md-4 justify-content-center">
             <img className="largura-foto-contato" src={contactPhoto} alt="Contato" />
           </div>
 
@@ -18,14 +18,14 @@ export default function ContactUsComponent(){
                 <input className="form-custom" placeholder="E-mail" type="text" />
                 <input className="form-custom" placeholder="CPF/CNPJ" type="text" />
                 <input className="form-custom" placeholder="Número de telefone" type="text" />
-                <button className="btn-custom txt-custom-roxo bg-white mt-2"><span>Cadastre-se</span></button>
+                <button className="btn-custom mt-2"><span>Cadastre-se</span></button>
               </div>
             </div>
             
             <div className = 'row'> 
               <div className="d-flex flex-column mt-5 justify-content-center w-75 mx-auto">
                 <h2 className="titulo-login text-center">Já possui cadastro? Faça login e acesse o sistema!</h2>
-                <Link role='button' className = 'text-decoration-none txt-roxo-custom text-center bg-white align-self-center btn-custom txt-custom-roxo mt-2 largura-botao' to="/sistema">Fazer login!</Link>
+                <Link role='button' className = 'text-decoration-none text-center align-self-center btn-custom mt-2 largura-botao' to="/sistema">Fazer login!</Link>
               </div>
             </div> 
           </div>
