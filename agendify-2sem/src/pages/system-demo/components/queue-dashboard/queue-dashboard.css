@@ -15,3 +15,7 @@
 .status-processing{
     background-color: rgb(76, 71, 77)
 }
+
+.dash-max-height{
+    max-height: 768px;
+}
