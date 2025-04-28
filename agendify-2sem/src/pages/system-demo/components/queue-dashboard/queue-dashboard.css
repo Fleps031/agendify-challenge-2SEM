@@ -17,5 +17,52 @@
 }
 
 .dash-max-height{
-    max-height: 768px;
+    max-height: 400px;
+}
+
+.loading-box{
+    height: 50vh !important;
+    width: 300px;
+}
+
+.spinner-size{
+    width: 50px !important;
+    height: 50px !important;
+}
+
+@media screen and (min-width: 600px){
+    .spinner-size{
+        width: 100px !important;
+        height: 100px !important;
+    }
+}
+
+.modal-height {
+    height: 200px !important;
+}
+
+.modal-button-confirm{
+    display: inline-block;
+    width: 100%;
+    max-width: 260px;
+    padding: 2px; 
+    border-radius: 12px;
+    background: none; 
+    position: relative; 
+    box-sizing: border-box;
+    color: white !important;
+}
+
+.modal-button-confirm::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    padding: 2px; 
+    background: linear-gradient(90deg, #6d5dfc, #fc67fa);
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
 }

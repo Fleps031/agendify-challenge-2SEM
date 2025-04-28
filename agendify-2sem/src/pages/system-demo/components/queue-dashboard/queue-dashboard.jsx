@@ -4,7 +4,7 @@ import './queue-dashboard.css';
 import * as faker from 'faker-br'
 import { cpf } from 'cpf-cnpj-validator';
 
-const knownStatus = ['Agendado', 'Aguardando confirmação', 'Em análise', 'Notificação enviada']
+const knownStatus = ['Agendado', 'Aguardando confirmação', 'Notificação enviada', 'Em análise']
 
 
 const statusCoverage = {
@@ -21,7 +21,7 @@ const statusColors = {
     'Notificação enviada': 'status-notified',
 }
 
-function DashboardTableRow({ patientRow, patientIndex }) {
+function DashboardTableRow({ patientRow, patientIndex, removeFunction }) {
     const statusClass = statusColors[patientRow?.status]
 
     return (
@@ -37,40 +37,71 @@ function DashboardTableRow({ patientRow, patientIndex }) {
                     <span className={'badge ' + statusClass}>{patientRow?.status}</span>
                 </td>
                 <td className='align-middle'>
-                    <FaTrashAlt role='button' className='trash-can' />
+                    <FaTrashAlt onClick={removeFunction(patientIndex)} role='button' className='trash-can' data-bs-toggle="modal" data-bs-target="#exampleModal" />
                 </td>
             </tr>
         </>
     )
 }
 
+
 export default function QueueDashboard() {
     const [patients, setPatients] = useState([]);
-    const [initial, setInitial] = useState([0])
+    const [loading, setLoading] = useState(true);
+    const [idxToRemove, setToRemove] = useState(0);
+
+    let statusCoverage;
 
     useEffect(() => {
         createInitialPatients();
     }, [])
 
-
     function getStatusByPosition(pos){
-        for (let i in statusCoverage){
-            if(pos + 1 <= i){
-                return statusCoverage[i]
+       return statusCoverage[pos]
+    }
+
+    function initialStatusCoverage(perc){
+        let tempStatusCoverage = []
+        
+        
+        for(let i in perc){
+            console.log(perc[i])
+            for(let j=0; j <=perc[i]; j++){
+                tempStatusCoverage.push(knownStatus[i])
             }
         }
+
+        console.log(tempStatusCoverage)
+
+        statusCoverage = tempStatusCoverage;
     }
 
 
     function createInitialPatients(){
-        const newPatients = createPatients(10);
-        console.log(newPatients)
+        setLoading(true);
+
+        const newPatients = createPatients(16);
         setPatients(newPatients);
+
+        setTimeout(() => {
+            setLoading(false);
+        }, 1200)
+    }
+
+    function removePatient(){
+        let tempPatients = [...patients];
+
+        console.log("Remove Patient")
+        tempPatients.splice(idxToRemove, 1);
+        
+        console.log(tempPatients)
     }
 
 
     function createPatients(n){
         const newPatients = []
+
+        initialStatusCoverage([4,4,2,5]);
         
         for(let i=0; i<n; i++){
             let pastDate = faker.date.past()
@@ -94,10 +125,8 @@ export default function QueueDashboard() {
                 }
             )
         }
-
-        console.log(faker.date.past().getDate())
-        console.log(faker.date.recent().getFullYear())
-        console.log(faker.date.past().getMonth())
+        
+        console.log(newPatients)
         
         return newPatients
     }
@@ -110,14 +139,17 @@ export default function QueueDashboard() {
                     <h1 className='fw-bold'>Dashboard - Agendamentos</h1>
                 </div>
 
-                <div className='row text-start mb-1'>
-                    <h2 className='fw-regular'>Requisições de agendamento/encaixe</h2>
+                <div className='row text-start mb-3'>
+                    <div className='col-md-9 d-flex justify-content-start align-items-center'> <h2 className='fw-regular'>Requisições de agendamento/encaixe</h2> </div>
+                    <div className='col-md-3 d-flex justify-content-start align-items-center'>
+                        <button className='btn btn-outline-primary' onClick={createInitialPatients}>Carregar novos usuários</button>
+                    </div>
                 </div>
 
                 <div className='row text-start space-between column-gap-5 ps-3'>
                     <div className='col-md-8 p-0 h-30'>
-                        <div className='container-fluid overflow-auto p-0 table-responsive border-bottom-0 card rounded-1 p-0 m-0 dash-max-height'>
-                            <table className="table m-0 fixedHeader">
+                        <div className={loading ? 'container-fluid overflow-auto p-0 table-responsive card rounded-1 p-0 m-0 dash-max-height' : 'container-fluid overflow-auto p-0 table-responsive border-bottom-0 card rounded-1 p-0 m-0 dash-max-height'}>
+                            <table className={loading ? 'd-none border' : 'table m-0 fixedHeader'}>
                                 <thead className='text-center sticky-top'>
                                     <tr className='table-dark'>
                                         <th className='align-middle' scope='col text-center'>ID</th>
@@ -131,17 +163,46 @@ export default function QueueDashboard() {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {patients.map((el, idx) => <DashboardTableRow patientRow={el} patientIndex={idx} key={idx} />)}
+
+                                    {patients.map((el, idx) => <DashboardTableRow patientRow={el} patientIndex={idx} removeFunction={setToRemove}key={idx} />)}
+                                
                                 </tbody>
                             </table>
+
+                            <div className={loading ? 'd-flex flex-row w-100 justify-content-center align-items-center loading-box' : 'd-none'}>
+                                <div class="spinner-border spinner-size" role="status"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="modal" id="exampleModal" tabindex="-1"  data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div className='modal-dialog'>
+                            <div className='modal-content bg-dark text-white'>
+                                <div className='modal-header'>
+                                    <h2 className='text-middle w-100 d-flex flex-row justify-content-center'>Atenção!</h2>
+                                    <div data-bs-theme="dark">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                </div>
+                                <div className='modal-body'>
+                                    <div className='d-flex modal-height gap-4 flex-column align-items-center justify-content-center'>
+                                        <p className='text-center fs-4'>Deseja mesmo despriorizar esse paciente da fila?</p>
+                                        <button type="button" class="btn modal-button-confirm" data-bs-dismiss="modal" aria-label="Close" onCLick={removePatient}>Confirmar</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
 
-                    <div className='col-md'>
-                        <h3 className='text-center'>Card</h3>
-                        <div className='container-fluid'>
 
+                    <div className='col-md'>
+                        <div className='container-fluid'>
+                            <div className='card'>
+                                <div className='card-body'>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

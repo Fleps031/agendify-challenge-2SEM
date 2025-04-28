@@ -20,7 +20,7 @@ export default function QueueContainer() {
   }, [])
 
   return (
-    <div className="queue-container p-4 container-fluid">
+    <div className="queue-container  pe-0 pt-4 pb-4 container-fluid">
       {tipoUser === 'paciente' ? <QueuePatient /> : <QueueDashboard />}
     </div>
   )
