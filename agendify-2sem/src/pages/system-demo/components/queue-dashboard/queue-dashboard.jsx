@@ -1,8 +1,8 @@
+import { cpf } from 'cpf-cnpj-validator';
+import * as faker from 'faker-br';
 import { useEffect, useState } from 'react';
 import { FaTrashAlt } from "react-icons/fa";
 import './queue-dashboard.css';
-import * as faker from 'faker-br'
-import { cpf } from 'cpf-cnpj-validator';
 
 const knownStatus = ['Agendado', 'Aguardando confirmação', 'Notificação enviada', 'Em análise']
 
@@ -37,7 +37,7 @@ function DashboardTableRow({ patientRow, patientIndex, removeFunction }) {
                     <span className={'badge ' + statusClass}>{patientRow?.status}</span>
                 </td>
                 <td className='align-middle'>
-                    <FaTrashAlt onClick={removeFunction(patientIndex)} role='button' className='trash-can' data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                    <FaTrashAlt onClick={() => removeFunction(patientIndex)} role='button' className='trash-can' data-bs-toggle="modal" data-bs-target="#exampleModal" />
                 </td>
             </tr>
         </>
@@ -48,25 +48,29 @@ function DashboardTableRow({ patientRow, patientIndex, removeFunction }) {
 export default function QueueDashboard() {
     const [patients, setPatients] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [idxToRemove, setToRemove] = useState(0);
 
     let statusCoverage;
+    let idxToRemove;
 
     useEffect(() => {
         createInitialPatients();
     }, [])
 
-    function getStatusByPosition(pos){
-       return statusCoverage[pos]
+    function getStatusByPosition(pos) {
+        return statusCoverage[pos]
     }
 
-    function initialStatusCoverage(perc){
+    function setToRemove(setIdx) {
+        idxToRemove = setIdx
+    }
+
+    function initialStatusCoverage(perc) {
         let tempStatusCoverage = []
-        
-        
-        for(let i in perc){
+
+
+        for (let i in perc) {
             console.log(perc[i])
-            for(let j=0; j <=perc[i]; j++){
+            for (let j = 0; j <= perc[i]; j++) {
                 tempStatusCoverage.push(knownStatus[i])
             }
         }
@@ -76,39 +80,46 @@ export default function QueueDashboard() {
         statusCoverage = tempStatusCoverage;
     }
 
+    function loadLocalPatients() {
+        console.log("json")
+        setPatients(JSON.parse(localStorage.getItem('filaPacientes')));
+    }
 
-    function createInitialPatients(){
+
+    function createInitialPatients() {
         setLoading(true);
 
         const newPatients = createPatients(16);
+        localStorage.setItem("filaPacientes", JSON.stringify(newPatients))
         setPatients(newPatients);
+
 
         setTimeout(() => {
             setLoading(false);
         }, 1200)
     }
 
-    function removePatient(){
+    function removePatient(patientIdx) {
         let tempPatients = [...patients];
 
         console.log("Remove Patient")
         tempPatients.splice(idxToRemove, 1);
-        
+
         console.log(tempPatients)
     }
 
 
-    function createPatients(n){
+    function createPatients(n) {
         const newPatients = []
 
-        initialStatusCoverage([4,4,2,5]);
-        
-        for(let i=0; i<n; i++){
+        initialStatusCoverage([4, 4, 2, 5]);
+
+        for (let i = 0; i < n; i++) {
             let pastDate = faker.date.past()
-            
+
             let newDate = {
                 day: pastDate.getDate().toString(),
-                month: (pastDate.getMonth() +1).toString(),
+                month: (pastDate.getMonth() + 1).toString(),
                 year: '2024'
             }
 
@@ -125,9 +136,8 @@ export default function QueueDashboard() {
                 }
             )
         }
-        
-        console.log(newPatients)
-        
+
+
         return newPatients
     }
 
@@ -142,7 +152,7 @@ export default function QueueDashboard() {
                 <div className='row text-start mb-3'>
                     <div className='col-md-9 d-flex justify-content-start align-items-center'> <h2 className='fw-regular'>Requisições de agendamento/encaixe</h2> </div>
                     <div className='col-md-3 d-flex justify-content-start align-items-center'>
-                        <button className='btn btn-outline-primary' onClick={createInitialPatients}>Carregar novos usuários</button>
+                        <button className='btn btn-outline-primary' onClick={() => loadLocalPatients()}>Carregar novos usuários</button>
                     </div>
                 </div>
 
@@ -164,8 +174,8 @@ export default function QueueDashboard() {
                                 </thead>
                                 <tbody>
 
-                                    {patients.map((el, idx) => <DashboardTableRow patientRow={el} patientIndex={idx} removeFunction={setToRemove}key={idx} />)}
-                                
+                                    {patients.map((el, idx) => <DashboardTableRow patientRow={el} patientIndex={idx} removeFunction={setToRemove} key={idx} />)}
+
                                 </tbody>
                             </table>
 
@@ -175,7 +185,7 @@ export default function QueueDashboard() {
                         </div>
                     </div>
 
-                    <div className="modal" id="exampleModal" tabindex="-1"  data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div className="modal" id="exampleModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div className='modal-dialog'>
                             <div className='modal-content bg-dark text-white'>
                                 <div className='modal-header'>
@@ -187,7 +197,7 @@ export default function QueueDashboard() {
                                 <div className='modal-body'>
                                     <div className='d-flex modal-height gap-4 flex-column align-items-center justify-content-center'>
                                         <p className='text-center fs-4'>Deseja mesmo despriorizar esse paciente da fila?</p>
-                                        <button type="button" class="btn modal-button-confirm" data-bs-dismiss="modal" aria-label="Close" onCLick={removePatient}>Confirmar</button>
+                                        <button type="button" class="btn modal-button-confirm" data-bs-dismiss="modal" aria-label="Close" onClick={() => removePatient()}>Confirmar</button>
                                     </div>
                                 </div>
                             </div>
