@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<LandingPage />}/>
+        <Route path="/agendify-challenge-2SEM/" element={<LandingPage />}/>
 
         <Route path="/sistema" element={<SystemDemo />}>
           {/* /sistema → /sistema/login */}

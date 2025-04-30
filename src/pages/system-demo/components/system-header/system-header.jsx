@@ -12,7 +12,7 @@ export default function SystemHeader(){
                 <div className="navbar-container">
                     <div className="navbar-brand">
                     <img src={logoAgendify} alt="logo Agendify" className="rounded"/>
-                    <Link className="text-decoration-none" to="/"><h1 className="text-white m-0">Agendify</h1></Link>
+                    <Link className="text-decoration-none" to="/agendify-challenge-2SEM/"><h1 className="text-white m-0">Agendify</h1></Link>
                     </div>
                 </div>
             </section>
