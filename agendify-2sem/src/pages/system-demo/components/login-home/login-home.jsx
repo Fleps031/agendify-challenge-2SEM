@@ -5,12 +5,12 @@ import imgSelection from '../../../../images/home_2.png'
 
 export default function LoginHome({ mudarTipoUser }) {
   return (
-    <div className="login-home d-flex vh-100">
+    <div className="login-home d-flex h-100">
       {/* coluna de seleção */}
       <div className="left-col d-flex flex-column align-items-center justify-content-center">
-      <h1 className="mb-4">
-  Bem vindo ao <span className="agendify-gradient">Agendify!</span>
-</h1>
+      <h1 className="mb-4 text-center">
+        Bem vindo ao <span className="agendify-gradient">Agendify!</span>
+      </h1>
                {/* Ambos iguais: outline branco + hover degradê */}
                       <div className="btn-gradient-border mb-3">
          <button

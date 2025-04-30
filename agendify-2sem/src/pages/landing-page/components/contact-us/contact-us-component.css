@@ -17,21 +17,21 @@
 }
 
 .borda {
-  border: 1px solid #6200cc !important;
+  border: 1px solid #6E24B6 !important;
   border-radius: 24px 24px;
 }
 
 .sombra:hover {
   transform: scale(1.005);
-  box-shadow: 0 4px 10px #6200cc;
+  box-shadow: 0 4px 10px #6E24B6;
 }
 
 .txt-roxo-custom {
-  color: #8000ff;
+  color: #6E24B6;
 }
 
 .bg-roxo-custom {
-  background-color: #8000ff;
+  background-color: #6E24B6;
 }
 
 .form-custom {

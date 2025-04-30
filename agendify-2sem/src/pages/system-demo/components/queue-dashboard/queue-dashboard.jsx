@@ -256,8 +256,8 @@ export default function QueueDashboard() {
                     </div>
                 </div>
 
-                <div className='row text-start space-between column-gap-5 ps-3'>
-                    <div className='col-md-8 p-0 h-30'>
+                <div className='row text-start space-between column-gap-5 row-gap-3 ps-3 w-100'>
+                    <div className='col-md-8 p-0 h-30 min-w-40'>
                         <div className={loading ? 'container-fluid overflow-auto p-0 table-responsive card rounded-1 p-0 m-0 dash-max-height' : 'container-fluid overflow-auto p-0 table-responsive border-bottom-0 card rounded-1 p-0 m-0 dash-max-height'}>
                             <table className={loading ? 'd-none border' : 'table m-0 fixedHeader table-hover'}>
                                 <thead className='text-center sticky-top'>

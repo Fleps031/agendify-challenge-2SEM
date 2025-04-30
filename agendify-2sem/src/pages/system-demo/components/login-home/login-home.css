@@ -1,6 +1,5 @@
 /* Container full‑screen sem scroll */
 .login-home {
-    position: fixed;
     inset: 0;
     display: flex;
     overflow: hidden;

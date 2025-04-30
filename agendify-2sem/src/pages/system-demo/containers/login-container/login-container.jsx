@@ -37,10 +37,10 @@ export default function LoginContainer() {
         <LoginHome mudarTipoUser={mudarTipoUser} />
       ) : (       
         <LoginForm
-         tipoUser={tipoUser}
-         onLoginSuccess={onLoginSuccess}
-         onBack={onBack}
-       />
+        tipoUser={tipoUser}
+        onLoginSuccess={onLoginSuccess}
+        onBack={onBack}
+      />
       )}
     </div>
   )
