@@ -6,4 +6,3 @@ export default defineConfig({
   plugins: [react()],
   base: "/agendify-challenge-2SEM/"
 })
-x
