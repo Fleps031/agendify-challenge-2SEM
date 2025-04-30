@@ -17,7 +17,7 @@
 }
 
 .dash-max-height{
-    max-height: 400px;
+    max-height: 660px;
 }
 
 .loading-box{
@@ -65,4 +65,45 @@
       linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
+}
+
+.hover-row{
+    cursor: pointer;
+}
+
+.img-detail{
+    width: 120px;
+    height: 120px;
+}
+
+.detail-vertical-divider{
+    height: 120px;
+    width: 2px;
+    background-color: #6E24B6;
+}
+
+.detail-min-w{
+    min-width: 300px !important;
+}
+
+.detail-bio-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.detail-title{
+    color: #6E24B6;
+}
+
+.detail-x-divider{
+    height: 2px;
+    width: 100%;
+    align-self: center;
+    background-color: #6E24B6;
+}
+
+.card-exame-detalhe{
+    height: 100px;
 }

@@ -1,7 +1,7 @@
 import './queue-patient.css'
 import { useMemo } from 'react';
 
-function CardExame({ nomePaciente, nomeExame, dataExame }) {
+export function CardExame({ nomePaciente, nomeExame, dataExame }) {
   return (
     <div className="mb-3 ">
       <p className="text-purple mb-1">{nomePaciente}</p>
