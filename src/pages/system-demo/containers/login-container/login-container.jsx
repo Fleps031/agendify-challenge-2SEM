@@ -23,7 +23,7 @@ export default function LoginContainer() {
   }
 
   function onLoginSuccess() {
-    navigate('../fila')
+    navigate('/agendify-challenge-2SEM/sistema/fila')
   }
 
   function onBack() {

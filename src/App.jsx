@@ -15,9 +15,9 @@ function App() {
 
       <Route path="/agendify-challenge-2SEM/sistema" element={<SystemDemo/>}>
         <Route index element={<Navigate to="login" replace />} />
-        <Route path="login" element={<LoginContainer />} />
-        <Route path="fila" element={<QueueContainer />} />
       </Route>
+      <Route path="/agendify-challenge-2SEM/sistema/login" element={<LoginContainer />} />
+      <Route path="/agendify-challenge-2SEM/sistema/fila" element={<QueueContainer />} />
     </Routes>
     </>
   )
