@@ -10,16 +10,15 @@ function App() {
 
   return (
     <>
-      <Routes>
-        <Route path="/agendify-challenge-2SEM/" element={<LandingPage />}/>
+    <Routes>
+      <Route index path="/agendify-challenge-2SEM/" element={<LandingPage/>}></Route>
 
-        <Route path="/sistema" element={<SystemDemo />}>
-          {/* /sistema → /sistema/login */}
-          <Route index element={<Navigate to="login" replace />} />
-          <Route path="login" element={<LoginContainer />} />
-          <Route path="fila" element={<QueueContainer />} />
-        </Route>
-      </Routes>
+      <Route path="/agendify-challenge-2SEM/sistema" element={<SystemDemo/>}>
+        <Route index element={<Navigate to="login" replace />} />
+        <Route path="login" element={<LoginContainer />} />
+        <Route path="fila" element={<QueueContainer />} />
+      </Route>
+    </Routes>
     </>
   )
 }

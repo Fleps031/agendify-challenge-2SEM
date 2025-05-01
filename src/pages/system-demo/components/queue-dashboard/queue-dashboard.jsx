@@ -96,13 +96,11 @@ export default function QueueDashboard() {
 
 
         for (let i in perc) {
-            console.log(perc[i])
             for (let j = 0; j <= perc[i]; j++) {
                 tempStatusCoverage.push(knownStatus[i])
             }
         }
 
-        console.log(tempStatusCoverage)
 
         statusCoverage = tempStatusCoverage;
     }
@@ -152,24 +150,20 @@ export default function QueueDashboard() {
     function removePatient(patientIdx) {
         let tempPatients = [...patients];
 
-        console.log("Remove Patient")
         tempPatients.splice(idxToRemove, 1);
 
         setPatients(tempPatients)
         localStorage.setItem("filaPacientes", JSON.stringify(tempPatients))
 
-        console.log(tempPatients)
     }
 
 
     function generatePatients(n) {
-        console.log("generate patients")
         const newPatients = []
 
         initialStatusCoverage([4, 4, 2, 5]);
 
         for (let i = 0; i < n; i++) {
-            console.log('Teste')
             let pastDate = fakerBr.date.past()
 
             let newDate = {
@@ -228,8 +222,6 @@ export default function QueueDashboard() {
                 }
             )
         }
-        console.log("generate end")
-        console.log(newPatients);
         return newPatients
     }
 

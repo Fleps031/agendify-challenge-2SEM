@@ -23,7 +23,7 @@ export default function LoginContainer() {
   }
 
   function onLoginSuccess() {
-    navigate('/sistema/fila')
+    navigate('../fila')
   }
 
   function onBack() {

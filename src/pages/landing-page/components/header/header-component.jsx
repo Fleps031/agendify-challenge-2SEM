@@ -23,7 +23,7 @@ export default function HeaderComponent(){
         <a href="#beneficios" className="text-decoration-none texto-preto">Benefícios</a>
         <a href="#sistema" className="text-decoration-none texto-preto">Sistemas</a>
         <a href="#contato" className="text-decoration-none texto-preto">Cadastre-se</a>
-        <Link className = 'text-decoration-none texto-preto' to="/sistema">Login</Link>
+        <Link className = 'text-decoration-none texto-preto' to="sistema">Login</Link>
       </div>
     </section>
   );
