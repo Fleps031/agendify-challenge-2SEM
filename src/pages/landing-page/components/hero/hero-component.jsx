@@ -6,17 +6,17 @@ import img03 from "../../../../images/carrossel/img03.jpg"
 export default function HeroComponent(){
     return(
         <>
-            <div id = 'hero' className="d-flex flex-column p-0 w-100 mt-50 container-fluid">
+            <div id = 'hero' className="d-flex flex-column p-0 w-100 mt-50 container-fluid  h-100">
                 <div className="d-flex flex-row align-items-center justify-content-center p-0 ms-5">
                   <h1 className = 'align-self-center pb-2 fw-bold'>Agendify</h1>
-                  <h3 className = 'txt-roxo-custom ponto-grande'>.</h3>
+                  <h1 className = 'text-roxo-agendify-100 fs-1'>.</h1>
                   <h3 className = 'align-self-end pb-2 ms-3'>Organize e facilite a rotina dos seus pacientes</h3>
                 </div>
 
-                <div className = 'line-custom bg-roxo-custom mx-auto'></div>
+                <div className = 'd-flex agendify-divider w-25 bg-roxo-custom'> </div>
 
                 <div className="d-flex justify-content-center text-center mt-3 ms-3">
-                    <h3>Serviços de fila e agendamento pra encaixar seu paciente no <span className = 'txt-roxo-custom'>momento</span> certo.</h3>
+                    <h3>Serviços de fila e agendamento pra encaixar seu paciente no <span className = 'text-roxo-agendify-100'>momento</span> certo.</h3>
                 </div>
 
                 <div className="d-flex flex-column bg-black w-100 mt-5 h-100 p-4 justify-content-center align-items-center">
@@ -48,7 +48,7 @@ export default function HeroComponent(){
                         </div>
                     </div>
 
-                    <div className="mt-3 line-custom-ver2 bg-white"></div>
+                    <div className="mt-3 w-80 h-10 bg-white"></div>
                 </div>
             </div>
         </>

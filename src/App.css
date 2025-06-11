@@ -4,6 +4,22 @@
   overflow-x: hidden;
 }
 
+.text-roxo-agendify-100{
+  color:  #8000ff
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
 .scale-hover:hover {
   transform: scale(1.01);
 }
