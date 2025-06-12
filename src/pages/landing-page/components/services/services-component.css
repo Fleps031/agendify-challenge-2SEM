@@ -1,13 +1,9 @@
-.sombra:hover {
-    box-shadow: 0 0.25px 1px 0 #6E23B6, 0 1px 5px 0 #6E23B6;
-}
-
 .borda {
-    border: 2px solid #6f23b659;
+  border: 2px solid #6f23b659;
 }
 
 .container-fluid {
-    padding: 0 1rem;
+  padding: 0 1rem;
 }
 
 .redimensionamento {
@@ -16,34 +12,29 @@
   text-align: center;
 }
 
-.mt-100 {
+.mt-100-px {
   margin-top: 100px;
 }
 
-.line-custom {
-  width: 100px;
-  height: 5px;
-  margin-top: 0.5rem;
-}
-
-.bg-roxo-custom {
-  background-color: #6E24B6; /* roxo */
-}
-
-.borda {
-  border: 1px solid #ccc;
+.divider-small {
+  width: 100px !important;
 }
 
 .sombra {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+.sombra:hover {
+  box-shadow: 0 0.25px 1px 0 #6E23B6, 0 1px 5px 0 #6E23B6;
+}
+
+
 .scale-hover:hover {
   transform: scale(1.02);
   transition: transform 0.3s ease-in-out;
 }
 
-.w-150 {
+.w-150-px {
   width: 150px;
 }
 

@@ -1,0 +1,9 @@
+.background-agendify{
+  background-color: var(--background-agendify-100);
+}
+
+.agendify-divider{
+  height: 5px !important;
+}
+
+
