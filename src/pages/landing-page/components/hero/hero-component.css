@@ -2,70 +2,7 @@
   height: 2px !important;
 }
 
-.bg-roxo-custom {
-  background-color: #6E24B6;
+.background-agendify{
+  background-color: var(--background-agendify-100);
 }
 
-.home-subtext {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-  text-align: center;
-  padding: 0 1rem;
-}
-
-.home-gallery {
-  background-color: #000;
-  width: 100%;
-  margin-top: 2rem;
-  padding: 2rem 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.gallery-images {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.gallery-img {
-  width: 25%;
-  transition: transform 0.3s ease;
-}
-
-.gallery-img:hover {
-  transform: scale(1.05);
-}
-
-@media (max-width: 768px) {
-  .subtitle {
-    margin-left: 0;
-  }
-
-  .organizacao {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .organizacao img {
-    height: 50%;
-  }
-}
-
-@media (max-width: 480px) {
-  .ponto-grande {
-    font-size: 1.5rem;
-  }
-
-  .organizacao {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .organizacao img {
-    height: 50%;
-  }
-}

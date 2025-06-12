@@ -13,7 +13,7 @@ export default function HeroComponent(){
                   <h3 className = 'align-self-end pb-2 ms-3'>Organize e facilite a rotina dos seus pacientes</h3>
                 </div>
 
-                <div className = 'd-flex agendify-divider w-25 bg-roxo-custom'> </div>
+                <div className = 'd-flex agendify-divider w-75 m-auto background-agendify'> </div>
 
                 <div className="d-flex justify-content-center text-center mt-3 ms-3">
                     <h3>Serviços de fila e agendamento pra encaixar seu paciente no <span className = 'text-roxo-agendify-100'>momento</span> certo.</h3>

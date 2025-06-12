@@ -3,3 +3,7 @@
 * {
   font-family: "Lexend Deca", sans-serif;
 }
+
+:root {
+  --background-agendify-100: #8000ff !important;
+}
