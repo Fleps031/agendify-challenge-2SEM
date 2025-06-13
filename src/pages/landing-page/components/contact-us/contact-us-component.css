@@ -12,10 +12,6 @@
   height: 65%;
 }
 
-.largura-botao {
-  width: 15%;
-}
-
 .borda {
   border: 1px solid #6E24B6 !important;
   border-radius: 24px 24px;
@@ -47,10 +43,6 @@
   color: #ccc;
 }
 
-.largura-form {
-  width: 50%;
-}
-
 .btn-custom {
   padding: 0.5rem 1rem;
   border-radius: 30px;
@@ -75,18 +67,53 @@
 
 .largura-foto-contato {
   width: 100%;
-  margin-left: 15rem;
 }
+
+.quebra-foto{
+  min-width: 450px;
+}
+
+#contato{
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 500px){
+  #contato{
+    flex-direction: column !important;
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .quebra-foto{
+    min-width: 0px;
+  }
+
+  .largura-form{
+    width: 300px !important;
+    background-color: blue;
+  }
+}
+
+@media (max-width: 928px){
+  #contato{
+    flex-direction: column !important;
+  }
+
+  .quebra-foto{
+    width: 80% !important;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 
 @media (max-width: 768px) {
   .largura-foto-contato {
     width: 90%;
     margin-left: 0;
     margin-bottom: 10px;
-  }
-
-  .largura-botao {
-    margin: 2rem;
   }
 
   .sem-altura {
