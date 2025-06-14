@@ -1,5 +1,9 @@
 .background-agendify{
-  background-color: var(--background-agendify-100);
+  background-color: var(--agendify);
+}
+
+.background-agendify-100{
+  background-color: var(--agendify-100);
 }
 
 .agendify-divider{

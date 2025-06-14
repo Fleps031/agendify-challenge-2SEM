@@ -37,8 +37,18 @@
     }
 }
 
+@media screen and (max-width: 1230px) {
+    .tabela-responsiva{
+        width: 100% !important;
+    }
+}
+
 .modal-height {
     height: 200px !important;
+}
+
+.rdtPicker{
+    cursor: pointer !important;
 }
 
 .modal-button-confirm{
@@ -106,4 +116,9 @@
 
 .card-exame-detalhe{
     height: 100px;
+}
+
+.dashboard-divider{
+    height: 3px;
+    background-color: black;
 }

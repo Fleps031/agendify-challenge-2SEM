@@ -8,7 +8,7 @@ import { Link } from "react-router";
 export default function SystemHeader(){    
     return(
         <>
-             <section className="navbar sticky-top bg-roxo-custom p-3 header-system">
+            <section className="navbar sticky-top bg-roxo-custom p-3 header-system">
                 <div className="navbar-container">
                     <div className="navbar-brand">
                     <img src={logoAgendify} alt="logo Agendify" className="rounded"/>

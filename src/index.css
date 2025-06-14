@@ -5,6 +5,6 @@
 }
 
 :root {
-  --background-agendify: #8000ff !important;
-  --background-agendify-100: #8000ff !important;
+  --agendify: #8000ff !important;
+  --agendify-100: #6E24B6 !important;
 }
