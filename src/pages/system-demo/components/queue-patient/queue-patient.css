@@ -63,3 +63,63 @@
     align-items: center !important;
   }
 }
+
+.btn-gradient-text {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+
+  /* Fundo branco inicial */
+  background-color: #fff;
+  border-radius: 10px; /* Um pouco menor que o wrapper para a borda aparecer */
+
+  /* Texto com gradient */
+  background: linear-gradient(90deg, #6d5dfc, #fc67fa);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  transition: background-color 0.3s ease, color 0.3s ease, -webkit-text-fill-color 0.3s ease;
+  position: relative; 
+}
+
+.btn-gradient-border {
+  display: flex !important;
+  width: 800px !important;
+  padding: 2px; 
+  border-radius: 12px;
+  background: none; 
+  position: relative; 
+  box-sizing: border-box;
+}
+
+
+.btn-gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px; 
+  background: linear-gradient(90deg, #6d5dfc, #fc67fa);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.btn-gradient-border + .btn-gradient-border {
+  margin-top: 0.75rem;
+}
+
+
+.btn-gradient-border:hover .btn-gradient-text {
+  background-color: transparent; 
+  background: linear-gradient(90deg, #6d5dfc, #fc67fa); 
+  color: #fff; 
+  -webkit-text-fill-color: #fff; 
+}

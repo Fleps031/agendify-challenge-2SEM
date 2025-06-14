@@ -12,7 +12,7 @@ export default function LoginHome({ mudarTipoUser }) {
         Bem vindo ao <span className="agendify-gradient">Agendify!</span>
       </h1>
                {/* Ambos iguais: outline branco + hover degradê */}
-                      <div className="btn-gradient-border mb-3">
+      <div className="btn-gradient-border mb-3">
          <button
            className="btn-gradient-text"
            onClick={() => mudarTipoUser('hospital')}

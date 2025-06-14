@@ -1,5 +1,8 @@
 import './queue-patient.css'
 import { useMemo } from 'react';
+import { useNavigate } from 'react-router';
+
+
 
 export function CardExame({ nomePaciente, nomeExame, dataExame }) {
   return (
@@ -13,35 +16,66 @@ export function CardExame({ nomePaciente, nomeExame, dataExame }) {
   )
 }
 
-function CardSimples({ tituloInicio, qtdExames, tituloFim, nomePaciente, exame, dataInfo, infoExtra, altura=''}) {
-  const exameLabel = qtdExames.qtd > 1 ? 'exames' : 'exame';
-  const tituloFimCorrigido = qtdExames.qtd > 1
-    ? tituloFim.replace('agendado', 'agendados')
-    : tituloFim.replace('agendados', 'agendado');
+function CardSimples({ infosLabel, exames}) {
+  console.log(infosLabel, exames)
+  const exameLabel = infosLabel?.qtdExames?.qtd > 1 ? 'exames' : 'exame';
+  const tituloFimCorrigido = infosLabel?.qtdExames?.qtd > 1
+    ? infosLabel?.tituloFim?.replace('agendado', 'agendados')
+    : infosLabel?.tituloFim?.replace('agendados', 'agendado');
 
 
   return (
-    <div className={'gradient-border custom-shadow d-flex flex-column ' + altura} >
+    <div className={'gradient-border custom-shadow d-flex flex-column ' + exames[0]?.altura} >
       <div className="inner d-flex flex-column h-100">
         <h5 className="fw-bold fs-4">
-          {tituloInicio} <span className="text-gradient">{qtdExames.extenso}</span> {exameLabel} {tituloFimCorrigido}
+          {infosLabel?.tituloInicio} <span className="text-gradient">{infosLabel?.qtdExames?.extenso}</span> {exameLabel} {tituloFimCorrigido}
         </h5>
-        <p className="text-purple">{nomePaciente}</p>
-        <div className="border rounded p-4 d-flex justify-content-between w-100 flex-wrap fs-5 card-content-bootstrap h-100">
-          <span>{exame}</span>
-          <small className={infoExtra ? "text-muted" : "text-purple"}>
-            {dataInfo}
-          </small>
-        </div>
+        {exames.map((el, idx) => {
+          return(
+            <>
+              <p className="text-purple">{el.nomePaciente}</p>
+              <div className="border rounded p-4 d-flex justify-content-between w-100 flex-wrap fs-5 card-content-bootstrap h-100" key={'examefila' + idx + 1}>
+                <span>{el?.exame}</span>
+                <small className={el.infoExtra ? "text-muted" : "text-purple"}>
+                  {el?.dataInfo}
+                </small>
+              </div>
+            </>
+          )
+        })}
+
       </div>
     </div>
   );
 }
 
 export default function QueuePatient() {
+  const navigate = useNavigate();
+
   const nomesResponsáveis = ['Jorge Pereira Dias', 'Paula Silva', 'Maria Moura', 'Ana Andrade', 'Fernando Lima', 'Evandro Souza'];
   const nomesPacientes = ['Alice Pereira Dias', 'Carlos Silva', 'Beatriz Moura', 'Lucas Andrade', 'Juliana Lima', 'João Souza'];
-  const exames = ['Exame de sangue', 'Tomografia', 'Ultrassonografia', 'Biópsia dos Pulmões', 'Ressonância Magnética'];
+  const exames = [
+    'Exame de sangue',
+    'Tomografia',
+    'Ultrassonografia',
+    'Biópsia dos Pulmões',
+    'Ressonância Magnética',
+    'Raio-X',
+    'Eletrocardiograma (ECG)',
+    'Eletroencefalograma (EEG)',
+    'Teste do Pezinho',
+    'Teste de Visão',
+    'Teste de Audição (Otoemissões Acústicas)',
+    'Exame de Urina',
+    'Gasometria Arterial',
+    'Ecocardiograma',
+    'Endoscopia Digestiva',
+    'Espirometria (Função Pulmonar)',
+    'Teste de Alergia',
+    'Cultura de Fezes',
+    'Punção Lombar',
+    'Mapa da Pressão Arterial (MAPA)'
+  ]
   const datas = ['24/08/2025', '26/08/2025', '28/07/2025', '11/06/2025', '15/09/2025', '18/11/2025'];
   const numerosPorExtenso = [
     { qtd: 1, extenso: 'um' },
@@ -83,32 +117,66 @@ export default function QueuePatient() {
 
   const { exameAgendado: exameAgendadoNome, exameFila: exameFilaNome } = useMemo(getExamesDiferentes, []);
 
+  function solicitarAgendamento() {
+    navigate('/agendify-challenge-2SEM/marcar-exame', {replace: true})
+  }
   const exameAgendado = useMemo(() => {
     const qtdExames = getRandom(numerosPorExtenso);
     return {
-      altura:' h-50 ',
-      tituloInicio: 'Você tem',
-      qtdExames,
-      tituloFim: 'agendado!',
-      nomePaciente,
-      exame: exameAgendadoNome,
-      dataInfo: getRandom(datas),
-      infoExtra: false
+      infoLabel:{
+        tituloInicio: 'Você tem',
+        qtdExames,
+        tituloFim: 'agendado!',
+      },
+      exames: [
+        {
+          altura:' h-50 ',
+          nomePaciente,
+          exame: exameAgendadoNome,
+          dataInfo: getRandom(datas),
+          infoExtra: false
+        }
+      ]
+     
     };
   }, [nomePaciente, exameAgendadoNome]);
 
   const exameFila = useMemo(() => {
-    const qtdExames = getRandom(numerosPorExtenso);
-    return {
-      altura:'h-50',
-      tituloInicio: 'Você está na fila para',
-      qtdExames,
-      tituloFim: '!',
-      nomePaciente,
-      exame: exameFilaNome,
-      dataInfo: <>Solicitado para reagendamento dia {getRandom(datas)}</>,
-      infoExtra: true
-    };
+    console.log("Examefila")
+    if(localStorage.getItem('filaExames') == undefined){
+      let starterExame = {
+        altura:'h-50',
+
+        nomePaciente,
+        exame: exameFilaNome,
+        dataInfo: `Solicitado para reagendamento dia ${getRandom(datas)}`,
+        infoExtra: true
+      };
+
+      localStorage.setItem('filaExames', JSON.stringify(
+        {
+          infoLabel: {   
+            tituloInicio: 'Você está na fila para',
+            qtdExames: {
+              qtd: '1',
+              extenso: 'um'
+            },
+            tituloFim: '!'
+          },
+          exames: [starterExame]
+        }
+      ))
+
+      return [starterExame]
+    }
+    else{
+      console.log("else")
+      let filaLocal = JSON.parse(localStorage.getItem('filaExames'));
+      console.log(filaLocal)
+      return filaLocal
+    }
+    
+   
   }, [nomePaciente, exameFilaNome]);
 
   const queuePacientes = useMemo(() => {
@@ -126,6 +194,13 @@ export default function QueuePatient() {
           <h2 className="fw-bold fs-1">
             {saudacao}, <span className="text-gradient">{nomeResponsavel}!</span>
           </h2>
+          <button
+                type="submit"
+                className="btn btn-gradient w-75"
+                onClick={solicitarAgendamento}
+              >
+                Solicitar agendamento
+          </button>
         </div>
       </div>
 
@@ -149,8 +224,8 @@ export default function QueuePatient() {
         </div>
 
         <div className="col-md-6 d-flex flex-column gap-3 h-100">
-          <CardSimples {...exameAgendado} />
-          <CardSimples {...exameFila} />
+          <CardSimples infosLabel={exameAgendado.infoLabel} exames={exameAgendado.exames} />
+          <CardSimples infosLabel={exameFila.infoLabel} exames={exameFila.exames} />
           <p className="mt-2 fs-5 text-purple">
             Estamos aqui para cuidar de vocês! O exame da sua criança já está na fila e deve ser agendado dentro dos próximos 2 meses.
             Fique tranquilo, avisaremos assim que uma vaga estiver disponível.

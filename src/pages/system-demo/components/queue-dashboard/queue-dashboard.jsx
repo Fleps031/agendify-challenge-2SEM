@@ -136,7 +136,7 @@ export default function QueueDashboard() {
             )}
             </div>
         );
-        };
+};
 
 
     let statusCoverage;
@@ -345,7 +345,7 @@ export default function QueueDashboard() {
                     requestedAt: newDate.day + '/' + newDate.month + '/' + newDate.year,
                     details: {
                         sex: patientGender,
-                        imgUrl: faker.image.personPortrait({sex: patientGender, size: '128'}),
+                        imgUrl: currentUser.picture.large,
                         dateBirth: formattedBirthDate.day + '/' + formattedBirthDate.month + '/' + formattedBirthDate.year,
                         age: new Date().getFullYear() - birthDate.getFullYear(),
                         exames: randomExames,
