@@ -5,7 +5,7 @@ O site contém duas seções principais:
 1. Landing page, a tela inicial que apresenta a empresa e os benefícios principais
 2. Demo do sistema, que pode ser acessado através do botão de login, simulando a utilização do sistema para empresas e pacientes hipotéticos.
 
-#Link do projeto no Github pages
+# Link do projeto no Github pages
 https://fleps031.github.io/agendify-challenge-2SEM/
 
 ## Integrantes do grupo - 1ESPR
